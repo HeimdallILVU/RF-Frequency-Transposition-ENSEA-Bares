@@ -8,7 +8,7 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="proje
 define "Filter#20UP" ( P1  P2 ) 
 ;parameters 
 #uselib "ckt" , "BPF_Butterworth"
-BPF_Butterworth:BPF1  P1 P2 Fcenter=2.436 GHz BWpass=72 MHz Apass=1 dB BWstop=120 MHz Astop=30 dB StopType="open" MaxRej=30 dB N=0 IL=4.4 dB Qu=1E308 Z1=50.1 Ohm Z2=50.1 Ohm 
+BPF_Butterworth:BPF1  P1 P2 Fcenter=2.436 GHz BWpass=72 MHz Apass=1 dB BWstop=120 MHz Astop=30 dB StopType="open" MaxRej=30 dB N=0 IL=4.4 dB Qu=1E308 Z1=35.27 Ohm tune{ 1 Ohm to 150 Ohm by 5 Ohm } Z2=54.64 Ohm tune{ 1 Ohm to 150 Ohm by 5 Ohm } 
 end "Filter#20UP"
 
 "Filter#20UP":X1  N__0 N__1 
@@ -17,7 +17,7 @@ Port:Term2  N__1 0 Num=2 Z=50 Ohm Noise=yes
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=2.2 GHz Stop=2.6 GHz Lin=401 
+SweepPlan: SP1_stim Start=2.2 GHz Stop=2.6 GHz Step=0.001 GHz Lin=401 
 
 OutputPlan:SP1_Output \
       Type="Output" \
