@@ -1,23 +1,15 @@
-; Top Design: "project_system_lib:Test_PreFilterUP:schematic"
+; Top Design: "project_system_lib:LNA_test_1:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Test_PreFilterUP:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-; Library Name: project_system_lib
-; Cell Name: Pre-Filter UP
-; View Name: schematic
-define "Pre-Filter#20UP" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=3.0103 dB Ripple=1 dB BWstop=24 MHz Astop=30 dB StopType="open" MaxRej=30 dB N=0 IL=4.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Pre-Filter#20UP"
-
-"Pre-Filter#20UP":X1  N__2 N__1 
-Port:Term1  N__2 0 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:LNA_test_1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+#uselib "sml" , "Amplifier2"
+Amplifier2:AMP1  N__0 N__2 S21=dbpolar(24,0) S11=polar(10**(-20),0) S22=polar(10**(-13),180) S12=dbpolar(24,0) GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB ClipDataFile=1 
+Port:Term1  N__0 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__2 0 Num=2 Z=50 Ohm Noise=yes 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=800 MHz Stop=900 Mhz Step=0.001 GHz 
+SweepPlan: SP1_stim Start=863 MHz Stop=873 MHz Step=0.1 MHz 
 
 OutputPlan:SP1_Output \
       Type="Output" \
