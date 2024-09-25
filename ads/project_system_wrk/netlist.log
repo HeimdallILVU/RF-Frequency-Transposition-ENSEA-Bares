@@ -1,123 +1,30 @@
-; Top Design: "project_system_lib:Frequency_Transposer:schematic"
+; Top Design: "project_system_lib:Test_PreFilterUP:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Frequency_Transposer:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-; Library Name: project_system_lib
-; Cell Name: Circulateur IN
-; View Name: schematic
-define "Circulateur#20IN" ( P1  P2  P3 ) 
-;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-end "Circulateur#20IN"
-
-; Library Name: project_system_lib
-; Cell Name: Circulateur OUT
-; View Name: schematic
-define "Circulateur#20OUT" ( P1  P2  P3 ) 
-;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB CheckPassivity=1 
-end "Circulateur#20OUT"
-
-; Library Name: project_system_lib
-; Cell Name: Filter DOWN
-; View Name: schematic
-define "Filter#20DOWN" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=866.5 MHz Apass=1 dB Ripple=1 dB BWstop=869.5 MHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Filter#20DOWN"
-
-; Library Name: project_system_lib
-; Cell Name: Filter UP
-; View Name: schematic
-define "Filter#20UP" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=2.4 GHz BWpass=2.3 GHz Apass=1 dB Ripple=1 dB BWstop=2.5 GHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Filter#20UP"
-
-; Library Name: project_system_lib
-; Cell Name: LNA
-; View Name: schematic
-define LNA ( P1  P2 ) 
-;parameters 
-#uselib "sml" , "Amplifier2"
-Amplifier2:AMP1  P1 P2 S21=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S12=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB ClipDataFile=1 
-end LNA
-
-; Library Name: project_system_lib
-; Cell Name: Melangeur DOWN
-; View Name: schematic
-define "Melangeur#20DOWN" ( P1  P2  P3 ) 
-;parameters 
-Mixer:MIX1  P1 P2 P3 SideBand=1 ConvGain=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-end "Melangeur#20DOWN"
-
-; Library Name: project_system_lib
-; Cell Name: Melangeur UP
-; View Name: schematic
-define "Melangeur#20UP" ( P1  P2  P3 ) 
-;parameters 
-Mixer:MIX1  P1 P2 P3 SideBand=1 ConvGain=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-end "Melangeur#20UP"
-
-; Library Name: project_system_lib
-; Cell Name: PowerAmp
-; View Name: schematic
-define PowerAmp ( P1  P2 ) 
-;parameters 
-#uselib "sml" , "Amplifier2"
-Amplifier2:AMP1  P1 P2 S21=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S12=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB ClipDataFile=1 
-end PowerAmp
-
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Test_PreFilterUP:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
 ; Cell Name: Pre-Filter UP
 ; View Name: schematic
 define "Pre-Filter#20UP" ( P1  P2 ) 
 ;parameters 
 #uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=866.5 MHz Apass=1 dB Ripple=1 dB BWstop=869.5 MHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
+BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=3.0103 dB Ripple=1 dB BWstop=24 MHz Astop=30 dB StopType="open" MaxRej=30 dB N=0 IL=4.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
 end "Pre-Filter#20UP"
 
-"Circulateur#20IN":X1  Vin N__0 N__1 
-"Circulateur#20OUT":X2  N__5 Vout N__3 
-"Filter#20DOWN":X3  N__7 N__6 
-"Pre-Filter#20UP":X9  N__14 N__13 
-LNA:X5  N__13 N__3 
-"Melangeur#20DOWN":X6  N__0 N__7 N__12 
-"Melangeur#20UP":X7  N__15 N__14 N__16 
-PowerAmp:X8  N__6 N__5 
-"Filter#20UP":X10  N__1 N__15 
-#uselib "sml" , "VCO"
-VCO:VCO1  0 N__12 Kv=1.0 kHz Freq=1.532 GHz P=-j*dbmtow(0) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
-#uselib "sml" , "VCO"
-VCO:VCO2  0 N__11 Kv=1.0 kHz Freq=1.532 GHz P=-j*dbmtow(0) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
-R:R1  N__8 0 R=50 Ohm Noise=yes 
-Port:PORT1  N__17 0 Num=1 Z=50 Ohm Pac=polar(dbmtow(20),0) Freq=freq Noise=yes 
-Short:I_in  N__17 Vin Mode=0 SaveCurrent=yes 
-Short:I_out  Vout N__8 Mode=0 SaveCurrent=yes 
-AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
-SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
+"Pre-Filter#20UP":X1  N__2 N__1 
+Port:Term1  N__2 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: AC1_stim Start=1 GHz Stop=10.0 GHz Step=0.1 GHz 
+SweepPlan: SP1_stim Start=800 MHz Stop=900 Mhz Step=0.001 GHz 
 
-OutputPlan:AC1_Output \
+OutputPlan:SP1_Output \
       Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
       UseEquationNestLevel=yes \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
+      SavedEquationNestLevel=2
 
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
