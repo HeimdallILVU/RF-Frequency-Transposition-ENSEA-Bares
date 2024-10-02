@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      estehube55
+HostName                       d283-pc5.ensea.fr
+ProcessIdentifier              14091
+ProcessCreationTime_UTC        1727265016
+ProcessCreationTime_Readable   Wed 25 Sep 2024 01:50:16 PM CEST CEST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /users/estehube55/ADS/system_project_ENSEA/ads/project_system_wrk/project_system_lib/%Filter#20%D%O%W%N/schematic/sch.oa.cdslck
+TimeEditLocked                 Wed 25 Sep 2024 03:21:06 PM CEST CEST

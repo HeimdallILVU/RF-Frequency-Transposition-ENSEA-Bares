@@ -5,23 +5,12 @@
 #
 LockStakeVersion               1.1
 LoginName                      estehube55
-<<<<<<< HEAD
-HostName                       kerosen.ensea.fr
-ProcessIdentifier              1600702
-ProcessCreationTime_UTC        1727872912
-ProcessCreationTime_Readable   Wed 02 Oct 2024 02:41:52 PM CEST CEST
-=======
 HostName                       d283-pc5.ensea.fr
 ProcessIdentifier              14091
 ProcessCreationTime_UTC        1727265016
 ProcessCreationTime_Readable   Wed 25 Sep 2024 01:50:16 PM CEST CEST
->>>>>>> c48d48c28b93d5b6833ffc6aac5acad0958e1648
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
 FilePathUsedToEditLock         /users/estehube55/ADS/system_project_ENSEA/ads/project_system_wrk/project_system_lib/%Frequency_%Transposer/schematic/sch.oa.cdslck
-<<<<<<< HEAD
-TimeEditLocked                 Wed 02 Oct 2024 02:42:15 PM CEST CEST
-=======
 TimeEditLocked                 Wed 25 Sep 2024 01:50:36 PM CEST CEST
->>>>>>> c48d48c28b93d5b6833ffc6aac5acad0958e1648
