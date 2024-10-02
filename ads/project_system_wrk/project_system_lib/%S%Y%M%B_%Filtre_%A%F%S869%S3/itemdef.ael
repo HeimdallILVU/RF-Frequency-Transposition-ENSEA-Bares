@@ -1,0 +1,5 @@
+create_item("SYMB_Filtre_AFS869S3","SYMB_Filtre_AFS869S3","X",16,-1,NULL,"Component Parameters",NULL,"%43?global %;%d:%t %# %44?0%:%31?%C%:_net%c%;%;%e %b%r%8?%29?%:%30?%p %:%k%?[%1i]%;=%p %;%;%;%e%e","SYMB_Filtre_AFS869S3","%t%b%r%38?%:\n%30?%s%:%k%?[%1i]%;=%s%;%;%e%e%;","",3,NULL,0,
+create_parm("BWstop","BWpass",68608,"StdFormSet",0,prm("StdForm","24 MHz")),
+create_parm("Astop","BWpass",68608,"StdFormSet",13,prm("StdForm","40 dB")),
+create_parm("BWpass","BWpass",68608,"StdFormSet",0,prm("StdForm","8 MHz")),
+create_parm("Apass","BWpass",68608,"StdFormSet",13,prm("StdForm","3 dB")));

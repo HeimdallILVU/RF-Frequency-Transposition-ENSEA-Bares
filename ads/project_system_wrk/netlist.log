@@ -1,23 +1,22 @@
-; Top Design: "project_system_lib:Test_PreFilterUP:schematic"
+; Top Design: "project_system_lib:TEST_FILTRE_AFS:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Test_PreFilterUP:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:TEST_FILTRE_AFS:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: Pre-Filter UP
+; Cell Name: SYMB_Filtre_AFS869S3
 ; View Name: schematic
-define "Pre-Filter#20UP" ( P1  P2 ) 
+define SYMB_Filtre_AFS869S3 ( P1  P2 ) 
 ;parameters 
 #uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=3.0103 dB Ripple=1 dB BWstop=24 MHz Astop=30 dB StopType="open" MaxRej=30 dB N=0 IL=4.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Pre-Filter#20UP"
+BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=3 dB Ripple=1.5 dB BWstop=24 MHz Astop=40 dB StopType="open" MaxRej=55 dB N=0 IL=4.5 dB Qu=1E308 Z1=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } Z2=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } 
+end SYMB_Filtre_AFS869S3
 
-"Pre-Filter#20UP":X1  N__2 N__1 
-Port:Term1  N__2 0 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+Port:TermG1  N__7 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__6 0 Num=2 Z=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=800 MHz Stop=900 Mhz Step=0.001 GHz 
+SweepPlan: SP1_stim Step=100 kHz Center=869 MHz Span=100 MHz 
 
 OutputPlan:SP1_Output \
       Type="Output" \
@@ -28,3 +27,4 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+SYMB_Filtre_AFS869S3:X1  N__7 N__6 

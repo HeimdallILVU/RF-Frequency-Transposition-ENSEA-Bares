@@ -1,0 +1,17 @@
+
+hpeesofsim (*) 595.shp Oct 31 2023, MINT version 5
+    (64-bit windows built: Tue Oct 31, 2023 22:23:19 +0000)
+
+
+***** Simulation started at Wed Oct  2 15:05:17 2024
+      Running on host: "LAPTOP-PSM28IJ9"
+      In Directory: "C:\Users\benji\Documents\GitHub\system_project_ENSEA\ads\project_system_wrk\data"
+      Process ID: 13916
+
+
+SP SP1[1] <project_system_lib:TEST_LNA:schematic>   freq=(1 GHz->3.5 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     0.84 seconds.
+
