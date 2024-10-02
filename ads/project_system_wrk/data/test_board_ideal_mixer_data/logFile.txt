@@ -1,0 +1,99 @@
+
+hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
+    (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
+
+
+***** Simulation started at Wed, Oct 02 2024 16:31:42 +0200
+      Running on host: "d283-pc5.ensea.fr"
+      In Directory: "/users/jerefleu12/Documents/git/system_project_ENSEA/ads/project_system_wrk/data"
+      User: "jerefleu", Process ID: 4299
+
+
+HB HB1[1] <project_system_lib:test_board_ideal_mixer:schematic>
+    Number of tones:   1.
+    Number of frequencies:   4.
+    Number of time samples:  8.
+    Number of HB equations (problem size): 70.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	0 A         	100.0             
+
+HB HB1[1] <project_system_lib:test_board_ideal_mixer:schematic>
+    Number of tones:   2.
+    Number of frequencies:   23.
+    Number of time samples:  64.
+    Number of HB equations (problem size): 450.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	322.552 mA  	100.0             
+1.0 	46.7214 mA  	100.0	316.228 mV   
+1.1 	867.362e-21A	100.0	10.842 aV    
+
+HB HB1[1] <project_system_lib:test_board_ideal_mixer:schematic>
+    Number of tones:   3.
+    Number of frequencies:   98.
+    Number of time samples:  512.
+    Number of HB equations (problem size): 1950.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
+    Preconditioner: DCP.
+    The general solver is used for HB Krylov preconditioning.
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	12.6491 mA  	100.0             
+1 	68.8175 aA  	100.0	632.456 mV  	  2	3.424e-16   
+2 	46.8574 aA  	100.0	405.48 aV   	  3	6.334e-16   
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 0 Hz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 195 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 674 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 869 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.064 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.348 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.543 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.738 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 2.217 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 2.412 GHz.
+
+
+Resource usage:
+    User time                 =     0.49 seconds.
+    System time               =     0.12 seconds.
+    Total CPU time            =     0.60 seconds.
+    Simulation stopwatch time =     0.18 seconds.
+    Total stopwatch time      =     1.11 seconds.
+
+    Physical memory used: 100 MBytes.
+    Incremental virtual memory (data only) used:  36 MBytes.
+
