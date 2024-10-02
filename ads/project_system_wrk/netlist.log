@@ -1,30 +1,43 @@
-; Top Design: "project_system_lib:Test_PreFilterUP:schematic"
+; Top Design: "project_system_lib:Work_low_cost_VCO:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Test_PreFilterUP:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-; Library Name: project_system_lib
-; Cell Name: Pre-Filter UP
-; View Name: schematic
-define "Pre-Filter#20UP" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=3.0103 dB Ripple=1 dB BWstop=24 MHz Astop=30 dB StopType="open" MaxRej=30 dB N=0 IL=4.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Pre-Filter#20UP"
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Work_low_cost_VCO:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 
-"Pre-Filter#20UP":X1  N__2 N__1 
-Port:Term1  N__2 0 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
-SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+freq_VCO=650
+freq_Quartz=1
 
-SweepPlan: SP1_stim Start=800 MHz Stop=900 Mhz Step=0.001 GHz 
+DefaultRIn=0
+DefaultROut=0
+DefaultRTemp=270
+HB:HB1 MaxOrder=4 Freq[1]=1.0 GHz Freq[2]=650 MHz Order[1]=1 Order[2]=1 StatusLevel=2 HBSS_WSP=0 OutputPlan="HB1_Output" 
 
-OutputPlan:SP1_Output \
+OutputPlan:HB1_Output \
       Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
       UseEquationNestLevel=yes \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
 
-#load "python","LinearCollapse"
-Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Tran:HB1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=1.0 GHz Order[1]=1 
+
+Component:tahb_HB1 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB1_tran" HB_Analysis="HB1" 
+
+#uselib "ckt" , "BPF_Chebyshev"
+BPF_Chebyshev:BPF1  N__13 Vmod1 Fcenter=1.650 GHz BWpass=300 MHz Apass=1 dB Ripple=1 dB BWstop=400 MHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
+Port:PORT2  N__12 0 Num=2 Z=50 Ohm P[1]=polar(dbmtow(1),0) Freq[1]=650 MHz    Noise=yes Pac=polar(dbmtow(0),0) LimitPhaseNoiseToCarrier=no 
+Port:PORT3  N__8 0 Num=3 Z=50 Ohm P[1]=polar(dbmtow(1),0) Freq[1]=1 GHz    Noise=yes Pac=polar(dbmtow(0),0) LimitPhaseNoiseToCarrier=no 
+Port:Term1  Vmod1 0 Num=1 Z=50 Ohm Noise=yes 
+Mixer:MIX2  N__12 N__13 N__8 SideBand=1 ConvGain=dbpolar(1,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 

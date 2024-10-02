@@ -3,10 +3,10 @@ hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
     (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
 
 
-***** Simulation started at Sat, Sep 21 2024 03:30:46 +0200
-      Running on host: "kerosen.ensea.fr"
-      In Directory: "/users/jerefleu12/Documents/ads/project_system_wrk/data"
-      User: "jerefleu", Process ID: 695497
+***** Simulation started at Wed, Oct 02 2024 14:43:36 +0200
+      Running on host: "d283-pc1.ensea.fr"
+      In Directory: "/users/robiauri55/Documents/Projet_System_git/system_project_ENSEA/ads/project_system_wrk/data"
+      User: "robiauri", Process ID: 15774
 
 Warning detected by hpeesofsim during circuit set up.
     Capacitor `VCO2.CMP1' C=1 is unusually large.
@@ -14,21 +14,14 @@ Warning detected by hpeesofsim during circuit set up.
 Warning detected by hpeesofsim during circuit set up.
     Capacitor `VCO1.CMP1' C=1 is unusually large.
 
-Warning detected by hpeesofsim in topology check during circuit set up.
-    Number of nodes with only one device attached (topology corrected): 1
-
 Pt DC convergence is used.
 Message from hpeesofsim during DC analysis `AC1'.
-    Required filter order is calculated to be 9 for component
+    Required filter order is calculated to be 3 for component
                  `X10.BPF1.CMP1'
 
 Message from hpeesofsim during DC analysis `AC1'.
-    Required filter order is calculated to be 45 for component
+    Required filter order is calculated to be 3 for component
                  `X9.BPF1.CMP1'
-
-Warning detected by hpeesofsim during DC analysis `AC1'.
-    Max filter order is limited to 15 for component
-             `X9.BPF1.CMP1'
 
 Message from hpeesofsim during DC analysis `AC1'.
     Required filter order is calculated to be 45 for component
@@ -49,12 +42,12 @@ Warning detected by hpeesofsim during AC analysis `AC1'.
 
 
 Resource usage:
-    User time                 =     0.76 seconds.
-    System time               =     0.15 seconds.
-    Total CPU time            =     0.90 seconds.
-    Simulation stopwatch time =     0.16 seconds.
-    Total stopwatch time      =     1.08 seconds.
+    User time                 =     0.98 seconds.
+    System time               =     0.28 seconds.
+    Total CPU time            =     1.26 seconds.
+    Simulation stopwatch time =     0.19 seconds.
+    Total stopwatch time      =     3.21 seconds.
 
-    Physical memory used: 125 MBytes.
-    Incremental virtual memory (data only) used:  33.6 MBytes.
+    Physical memory used: 88.7 MBytes.
+    Incremental virtual memory (data only) used:  33.7 MBytes.
 
