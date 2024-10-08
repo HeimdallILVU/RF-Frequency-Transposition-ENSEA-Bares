@@ -1,8 +1,5 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows>
-        <Schematic lib="project_system_lib" width="1920" height="1009" x1="1920" geom="1,0,2,1920,23,1920,1009,3840,1080" cell="Frequency_Transposer" view="schematic" y1="23"/>
-        <DDS name="Frequency_Transposer.dds"/>
-    </Windows>
+    <Windows/>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>
