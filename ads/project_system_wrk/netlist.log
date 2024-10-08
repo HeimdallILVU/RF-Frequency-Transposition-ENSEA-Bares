@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; Top Design: "project_system_lib:test_board_ideal_mixer:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
@@ -46,6 +47,28 @@ SweepPlan: SP1_stim Start=0.5 GHz Stop=1.2 GHz Step=5 MHz
 =======
 ; Top Design: "project_system_lib:TEST_FILTRE_AFS:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
+=======
+; Top Design: "project_system_lib:test_FilterUP:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_FilterUP:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+; Library Name: project_system_lib
+; Cell Name: Filter UP
+; View Name: schematic
+define "Filter#20UP" ( P1  P2 ) 
+parameters  Z1=50  Z2=50 
+#uselib "ckt" , "BPF_Chebyshev"
+BPF_Chebyshev:BPF1  P1 P2 Fcenter=2.436 GHz BWpass=72 MHz Apass=1 dB Ripple=3 dB BWstop=96 MHz Astop=30 dB StopType="open" MaxRej=35 dB N=0 IL=3.5 dB Qu=1E308 Z1=Z1 Ohm Z2=Z2 Ohm 
+end "Filter#20UP"
+
+"Filter#20UP":X1  N__0 N__1 Z1=50 tune{ 1 to 150 by 0.5 } Z2=50 tune{ 1 to 150 by 0.5 } 
+Port:Term1  N__0 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=2.2 GHz Stop=2.6 GHz Lin=401 
+>>>>>>> e4e36da36e427fbb9fdd7a1db57953c7ba05dc39
 
 Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:TEST_FILTRE_AFS:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
