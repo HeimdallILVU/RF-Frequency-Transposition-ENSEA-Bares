@@ -1,0 +1,77 @@
+
+hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
+    (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
+
+
+***** Simulation started at Wed, Oct 02 2024 17:28:07 +0200
+      Running on host: "d283-pc1.ensea.fr"
+      In Directory: "/users/robiauri55/Documents/Projet_System_git/system_project_ENSEA/ads/project_system_wrk/data"
+      User: "robiauri", Process ID: 15506
+
+
+HB HB1[1] <project_system_lib:Work_low_cost_VCO:schematic>
+Pt DC convergence is used.
+Message from hpeesofsim during TRAN analysis `HB1'.
+    Required filter order is calculated to be 5 for component
+                 `BPF1.CMP1'
+
+    Number of tones:   1.
+    Number of frequencies:   2.
+    Number of time samples:  4.
+    Number of HB equations (problem size): 30.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	2.51785 mA  	100.0             
+1.0 	1.73472 aA  	100.0	12.2663 aV   
+
+HB HB1[1] <project_system_lib:Work_low_cost_VCO:schematic>
+    Number of tones:   2.
+    Number of frequencies:   5.
+    Number of time samples:  16.
+    Number of HB equations (problem size): 90.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	7.09627 mA  	100.0             
+1.0*	7.09627 mA  	100.0	315.796 mV   
+2.0*	28.1504 mA  	100.0	315.796 mV   
+3.0*	73.8495 aA  	100.0	58.8643 aV   
+An HB truncation error may be present.
+o The HB truncation error is due to using a finite order 
+  (number of harmonics) in the representation of the
+  circuit signals.
+
+Waveform                Trunc error             Tolerance
+---------------------------------------------------------
+N__8                    8.064e-03       >       1.177e-06
+MIX2.iLO                1.613e-04       >       1.004e-06
+
+o Number of waveforms violating the HB truncation error check:
+        2 out of 5 waveforms.
+o Estimated max HB truncation error: 8.064e-03 @ waveform N__8 .
+o The maximal HB truncation error estimate is greater than the 
+  achieved tolerance of 1.177e-06 for this waveform.
+o A time-domain plot of the N__13 waveform may show the error as 
+  Gibbs ripples.
+o To reduce the error, increase the order (number of harmonics) 
+  and re-simulate.
+
+Resource usage:
+    User time                 =     0.55 seconds.
+    System time               =     0.13 seconds.
+    Total CPU time            =     0.68 seconds.
+    Simulation stopwatch time =     0.21 seconds.
+    Total stopwatch time      =     1.33 seconds.
+
+    Physical memory used: 95 MBytes.
+    Incremental virtual memory (data only) used:  35.5 MBytes.
+

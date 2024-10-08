@@ -6,21 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      jerefleu12
 HostName                       d283-pc5.ensea.fr
-<<<<<<< HEAD
-ProcessIdentifier              19642
-ProcessCreationTime_UTC        1727873750
-ProcessCreationTime_Readable   Wed 02 Oct 2024 02:55:50 PM CEST CEST
-=======
 ProcessIdentifier              6612
 ProcessCreationTime_UTC        1727869016
 ProcessCreationTime_Readable   Wed 02 Oct 2024 01:36:56 PM CEST CEST
->>>>>>> dff078e2496dac9cddaeeca5514d115cd04641d0
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
 FilePathUsedToEditLock         /users/jerefleu12/Documents/git/system_project_ENSEA/ads/project_system_wrk/project_system_lib/%Frequency_%Transposer/schematic/sch.oa.cdslck.dirlck
-<<<<<<< HEAD
-TimeEditLocked                 Wed 02 Oct 2024 03:03:19 PM CEST CEST
-=======
 TimeEditLocked                 Wed 02 Oct 2024 01:37:28 PM CEST CEST
->>>>>>> dff078e2496dac9cddaeeca5514d115cd04641d0
