@@ -1,6 +1,3 @@
-Sure, here's a detailed tutorial for your engineers on how to create a pull request and the importance of careful file naming, formatted in Markdown:
-
-```markdown
 # Git and GitHub Workflow Tutorial
 
 ## Table of Contents
