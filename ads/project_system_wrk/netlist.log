@@ -8,10 +8,10 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="proje
 define LNA_test_4 ( RF_in  RF_out  Vdd  GND ) 
 ;parameters 
 #uselib "ckt" , "SnP"
-SnP:SnP1  N__5 N__13 NumPorts=2 File="/users/guillois91/Documents/ECS_Projet_Transposition/fichier_s_parameter/GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+SnP:SnP1  N__5 N__13 NumPorts=2 File="/users/guillois91/Documents/ECS_Projet_Transposition/system_project_ENSEA/fichier_s_parameter/GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
 C:C1  RF_in N__5 C=47 pF 
-C:C2  Vdd GND C=0.1 uF 
 L:L1  Vdd N__13 L=22 nH Noise=yes  
+C:C2  Vdd GND C=0.1 uF 
 C:C3  N__13 RF_out C=4.7 pF 
 end LNA_test_4
 
