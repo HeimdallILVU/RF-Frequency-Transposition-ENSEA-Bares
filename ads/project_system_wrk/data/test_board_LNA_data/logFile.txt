@@ -1,0 +1,29 @@
+
+hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
+    (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
+
+
+***** Simulation started at Wed, Oct 09 2024 16:51:19 +0200
+      Running on host: "d283-pc7.ensea.fr"
+      In Directory: "/users/guillois91/Documents/ECS_Projet_Transposition/system_project_ENSEA/ads/project_system_wrk/data"
+      User: "guillois", Process ID: 20834
+
+Warning detected by hpeesofsim during netlist flattening.
+    Touchstone file parser warning:
+    Line - 117, Column - 46 : expected end-of-line termination before end-of-file
+    File: `/users/guillois91/Documents/ECS_Projet_Transposition/system_project_ENSEA/Sparam_source/GRF2070_2080_5V_70mA_25C.s2p'.
+
+
+SP SP1[1] <project_system_lib:test_board_LNA:schematic>   freq=(500 MHz->1.2 GHz)
+
+
+Resource usage:
+    User time                 =     1.67 seconds.
+    System time               =     1.94 seconds.
+    Total CPU time            =     3.61 seconds.
+    Simulation stopwatch time =     0.08 seconds.
+    Total stopwatch time      =     1.27 seconds.
+
+    Physical memory used: 92.6 MBytes.
+    Incremental virtual memory (data only) used:  35.3 MBytes.
+

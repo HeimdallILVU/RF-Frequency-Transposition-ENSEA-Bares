@@ -1,28 +1,28 @@
-; Top Design: "project_system_lib:test_s_param_ampli_LNA:schematic"
+; Top Design: "project_system_lib:test_board_LNA:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_s_param_ampli_LNA:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_LNA:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: LNA_test_4
+; Cell Name: LNA_GRF2070
 ; View Name: schematic
-define LNA_test_4 ( RF_in  RF_out  Vdd  GND ) 
+define LNA_GRF2070 ( RF_in  RF_out  Vdd  GND ) 
 ;parameters 
 #uselib "ckt" , "SnP"
-SnP:SnP1  N__5 N__13 NumPorts=2 File="/users/guillois91/Documents/ECS_Projet_Transposition/system_project_ENSEA/fichier_s_parameter/GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+SnP:SnP1  N__5 N__13 NumPorts=2 File="/users/guillois91/Documents/ECS_Projet_Transposition/system_project_ENSEA/Sparam_source/GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
 C:C1  RF_in N__5 C=47 pF 
 L:L1  Vdd N__13 L=22 nH Noise=yes  
 C:C2  Vdd GND C=0.1 uF 
 C:C3  N__13 RF_out C=4.7 pF 
-end LNA_test_4
+end LNA_GRF2070
 
-Port:Term1  N__7 0 Num=1 Z=50 Ohm Noise=yes 
-Port:Term2  N__9 0 Num=2 Z=50 Ohm Noise=yes 
-V_Source:SRC1  N__5 0 Type="V_DC" Vdc=1.0 V SaveCurrent=1 
-LNA_test_4:X1  N__7 N__9 N__5 0 
+Port:TermG1  N__0 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
+LNA_GRF2070:X1  N__0 N__1 N__5 0 
+V_Source:SRC1  N__5 0 Type="V_DC" Vdc=5 V SaveCurrent=1 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=0.5 GHz Stop=1.2 GHz Step=5 MHz 
+SweepPlan: SP1_stim Start=500 MHz Stop=1.2 GHz Step=5 MHz 
 
 OutputPlan:SP1_Output \
       Type="Output" \

@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="17" Version="100">
+<ADSWorkspace Revision="27" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -116,17 +116,10 @@
             <Cell Name="project_system_lib:Pre-Filter UP" />
         </Folder>
         <Folder Name="Test_Boards">
-            <Cell Name="project_system_lib:LNA_test_1" />
-            <Cell Name="project_system_lib:LNA_test_2" />
-            <Cell Name="project_system_lib:LNA_test_3" />
-            <Data_Display Name="LNA_test_3.dds" />
-            <Cell Name="project_system_lib:LNA_test_4" />
             <Data_Display Name="test_s_param_ampli_LNA.dds" />
             <Cell Name="project_system_lib:test_s_param_ampli_LNA" />
             <Cell Name="project_system_lib:Test_PreFilterUP" />
             <Data_Display Name="Test_PreFilterUP.dds" />
-            <Cell Name="project_system_lib:TEST_LNA" />
-            <Data_Display Name="TEST_LNA.dds" />
             <Cell Name="project_system_lib:TEST_FILTRE_AFS" />
             <Data_Display Name="TEST_FILTRE_AFS.dds" />
             <Data_Display Name="test_FilterUP.dds" />
@@ -135,6 +128,7 @@
             <Cell Name="project_system_lib:test_board_ideal_mixer" />
             <Data_Display Name="test_board_AP.dds" />
             <Cell Name="project_system_lib:test_board_AP" />
+            <Cell Name="project_system_lib:test_board_LNA" />
         </Folder>
         <Folder Name="Full_Module">
             <Cell Name="project_system_lib:Frequency_Transposer" />
@@ -144,6 +138,8 @@
             <Cell Name="project_system_lib:Work_low_cost_VCO" />
             <Data_Display Name="Work_low_cost_VCO.dds" />
             <Cell Name="project_system_lib:SYMB_Filtre_AFS869S3" />
+            <Cell Name="project_system_lib:LNA_GRF2070" />
         </Folder>
+        <Log Name="netlist.log" />
     </Workspace>
 </ADSWorkspace>
