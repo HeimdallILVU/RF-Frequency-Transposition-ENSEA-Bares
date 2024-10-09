@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="17" Version="100">
+<ADSWorkspace Revision="18" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -26,8 +26,6 @@
         <Data_Files Name="dc_annotation/project_system_lib_test_board_ideal_mixer_schematic/annotation_map.xml" />
         <Data_Files Name="dc_annotation/project_system_lib_%Work_low_cost_%V%C%O_schematic/annotation_1.xml" />
         <Data_Files Name="dc_annotation/project_system_lib_%Work_low_cost_%V%C%O_schematic/annotation_map.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_schematic/annotation_1.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_schematic/annotation_map.xml" />
         <Data_Files Name="dc_annotation/project_system_lib_test_board_%A%P_schematic/annotation_1.xml" />
         <Data_Files Name="dc_annotation/project_system_lib_test_board_%A%P_schematic/annotation_map.xml" />
         <Data_Files Name="Work_low_cost_VCO_data/logFile.txt" />
@@ -139,11 +137,19 @@
         <Folder Name="Full_Module">
             <Cell Name="project_system_lib:Frequency_Transposer" />
             <Data_Display Name="Frequency_Transposer.dds" />
+            <Cell Name="project_system_lib:Frequency_Transposer_Test_Board" />
         </Folder>
         <Folder Name="Component_Models">
             <Cell Name="project_system_lib:Work_low_cost_VCO" />
             <Data_Display Name="Work_low_cost_VCO.dds" />
             <Cell Name="project_system_lib:SYMB_Filtre_AFS869S3" />
         </Folder>
+        <Log Name="netlist.log" />
+        <Dataset Name="Frequency_Transposer_Test_Board.ds" />
+        <Data_Files Name="Frequency_Transposer_Test_Board.ds" />
+        <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic/annotation_1.xml" />
+        <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic/annotation_map.xml" />
+        <Data_Files Name="Frequency_Transposer_Test_Board_data/logFile.txt" />
+        <Data_Display Name="Frequency_Transposer_Test_Board.dds" />
     </Workspace>
 </ADSWorkspace>
