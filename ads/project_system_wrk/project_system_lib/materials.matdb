@@ -1,0 +1,14 @@
+<!DOCTYPE Materials>
+<Materials>
+    <Conductors>
+        <Conductor mur_imag="" thermal_conductivity_in_z="" heat_capacity="2.49E+06" name="Copper" imag="" thermal_conductivity="401" electron_path="" parmtype="1" tc2="" real="5.8e7 Siemens/m" tnom="" tc1="" mur_real="1"/>
+        <Conductor mur_imag="" thermal_conductivity_in_z="" heat_capacity="" name="Typical_solder" imag="" thermal_conductivity="" electron_path="" parmtype="1" tc2="" real="0.71e7 Siemens/m" tnom="" tc1="" mur_real="1"/>
+    </Conductors>
+    <Dielectrics>
+        <Dielectric mur_imag="" thermal_conductivity_in_z="" heat_capacity="" er_real="4.6" er_loss="0.01" lowfreq="1 KHz" name="FR_4_Core" er_imag="" thermal_conductivity="" highfreq="1 THz" electron_path="" loss_type="1" valuefreq="1 GHz" mur_real="1"/>
+        <Dielectric mur_imag="" thermal_conductivity_in_z="" heat_capacity="" er_real="4.6" er_loss="0.01" lowfreq="1 KHz" name="FR_4_Prepreg" er_imag="" thermal_conductivity="" highfreq="1 THz" electron_path="" loss_type="1" valuefreq="1 GHz" mur_real="1"/>
+        <Dielectric mur_imag="" thermal_conductivity_in_z="" heat_capacity="" er_real="3.3" er_loss="" lowfreq="1 KHz" name="SolderMask" er_imag="" thermal_conductivity="" highfreq="1 THz" electron_path="" loss_type="1" valuefreq="1 GHz" mur_real="1"/>
+    </Dielectrics>
+    <Semiconductors/>
+    <roughness/>
+</Materials>

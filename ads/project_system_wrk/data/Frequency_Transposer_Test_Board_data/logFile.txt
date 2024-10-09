@@ -3,16 +3,13 @@ hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
     (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
 
 
-***** Simulation started at Wed, Oct 09 2024 16:23:07 +0200
-      Running on host: "d283-pc5.ensea.fr"
+***** Simulation started at Wed, Oct 09 2024 19:25:50 +0200
+      Running on host: "kerosen.ensea.fr"
       In Directory: "/users/jerefleu12/Documents/git/RF-Frequency-Transposition-ENSEA-Bares/ads/project_system_wrk/data"
-      User: "jerefleu", Process ID: 11313
+      User: "jerefleu", Process ID: 3004409
 
 Warning detected by hpeesofsim in topology check during circuit set up.
     Number of nodes with only one device attached (topology corrected): 2
-
-Warning detected by hpeesofsim during circuit set up `Env1'.
-     Several fundamental frequencies are set to the same value 2.412 GHz. A simpler frequency grid is advised and would be faster.
 
 
 HB Env1[1] <project_system_lib:Frequency_Transposer_Test_Board:schematic>
@@ -53,53 +50,12 @@ Iter	KCL residual	Damp %	Sol update
 0.0*	4 mA        	100.0             
 1.0 	867.362e-21A	100.0	10.842 aV    
 
-HB Env1[1] <project_system_lib:Frequency_Transposer_Test_Board:schematic>
-    Number of tones:   3.
-    Number of frequencies:   72.
-    Number of time samples:  2048.
-    Number of HB equations (problem size): 4862.
-    Auto mode: on.
-    Convergence mode: Auto.
-    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
-    Preconditioner: DCP.
-    The general solver is used for HB Krylov preconditioning.
-------------------------------------------------------------------------------
-Newton solver:					Linear solver:
-Iter	KCL residual	Damp %	Sol update	Iters	Residual
-------------------------------------------------------------------------------
-0 	252.982 mA  	100.0             
-1 	16.5585 fA  	100.0	22.4033 V   	  2	2.517e-15   
-2 	7.40591 fA  	100.0	48.4648 fV  	  2	3.089e-15   
-
-HB Env1[1] <project_system_lib:Frequency_Transposer_Test_Board:schematic>
-    Number of tones:   4.
-    Number of frequencies:   234.
-    Number of time samples:  16384.
-    Number of HB equations (problem size): 15878.
-    Auto mode: on.
-    Convergence mode: Auto.
-    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
-    Preconditioner: DCP.
-    The general solver is used for HB Krylov preconditioning.
-------------------------------------------------------------------------------
-Newton solver:					Linear solver:
-Iter	KCL residual	Damp %	Sol update	Iters	Residual
-------------------------------------------------------------------------------
-0 	189.737 mA  	100.0             
-1 	14.6338 fA  	100.0	11.634 V    	  2	3.466e-15   
-2 	7.13511 fA  	100.0	52.7671 fV  	  3	1.388e-15   
-
 HB Env1[1] <project_system_lib:Frequency_Transposer_Test_Board:schematic>   time=(0 s->100 ns)
-Warning detected by hpeesofsim during HB analysis `Env1'.
-    Dynamic waveform recalculation has been turned on to reduce memory usage.
-
-Using dynamic waveform recalculation
-Krylov-HB: 1450 freqs, 1048576 time-samples.
 Warning detected by hpeesofsim during HB analysis `Env1'.
     There are analysis frequencies inside Envelope bandwidths of other frequencies.
     A simpler frequency grid may be possible and faster.
 
-
+.
 COMPONENT : X2.CIR1.CMP1 envelope bandwidth characterization - vector fit
 
 COMPONENT : X1.CIR1.CMP1 envelope bandwidth characterization - vector fit
@@ -112,15 +68,21 @@ Warning detected by hpeesofsim during HB analysis `Env1'.
 Warning detected by hpeesofsim during HB analysis `Env1'.
      More than one mixing term has landed on frequency 10 MHz.
 
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 15 MHz.
 
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 20 MHz.
+
+..........
 
 Resource usage:
-    User time                 =    33.59 seconds.
-    System time               =     6.44 seconds.
-    Total CPU time            =    40.03 seconds.
-    Simulation stopwatch time =    39.76 seconds.
-    Total stopwatch time      =    40.92 seconds.
+    User time                 =    63.99 seconds.
+    System time               =     6.70 seconds.
+    Total CPU time            =    70.69 seconds.
+    Simulation stopwatch time =    69.92 seconds.
+    Total stopwatch time      =    71.20 seconds.
 
-    Physical memory used: 484 MBytes.
-    Incremental virtual memory (data only) used:  124 MBytes.
+    Physical memory used: 416 MBytes.
+    Incremental virtual memory (data only) used:  374 MBytes.
 

@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="18" Version="100">
+<ADSWorkspace Revision="34" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -138,6 +138,8 @@
             <Cell Name="project_system_lib:Frequency_Transposer" />
             <Data_Display Name="Frequency_Transposer.dds" />
             <Cell Name="project_system_lib:Frequency_Transposer_Test_Board" />
+            <Data_Display Name="Frequency_Transposer_Test_Board.dds" />
+            <Cell Name="project_system_lib:Frequency_Transposer_Transmission_Line" />
         </Folder>
         <Folder Name="Component_Models">
             <Cell Name="project_system_lib:Work_low_cost_VCO" />
@@ -150,6 +152,17 @@
         <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic/annotation_1.xml" />
         <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic/annotation_map.xml" />
         <Data_Files Name="Frequency_Transposer_Test_Board_data/logFile.txt" />
-        <Data_Display Name="Frequency_Transposer_Test_Board.dds" />
+        <Substrate Name="project_system_lib:tech.subst" />
+        <Folder Name="Emilie&apos;s default with Transmission Line">
+            <Cell Name="project_system_lib:Pre-Filter UP Transmission Line" />
+            <Cell Name="project_system_lib:Circulateur IN Transmission Line" />
+            <Cell Name="project_system_lib:Circulateur OUT Transmission Line" />
+            <Cell Name="project_system_lib:PowerAmp Transmission Line" />
+            <Cell Name="project_system_lib:Melangeur UP Transmission Line" />
+            <Cell Name="project_system_lib:Melangeur DOWN Transmission Line" />
+            <Cell Name="project_system_lib:LNA Transmission Line" />
+            <Cell Name="project_system_lib:Filter UP Transmission Line" />
+            <Cell Name="project_system_lib:Filter DOWN Transmission Line" />
+        </Folder>
     </Workspace>
 </ADSWorkspace>
