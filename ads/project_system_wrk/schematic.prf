@@ -48,7 +48,7 @@ entryMode 0
 rotationIncrement 90.000000
 gridDisplayX 2
 gridDisplayY 2
-gridDisplayOn 1
+gridDisplayOn 0
 gridDisplaySameXY 1
 majorGridDisplayX 5
 majorGridDisplayY 5

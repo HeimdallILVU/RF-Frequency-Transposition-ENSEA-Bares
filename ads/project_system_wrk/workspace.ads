@@ -105,7 +105,6 @@
             <Cell Name="project_system_lib:Pre-Filter UP" />
         </Folder>
         <Folder Name="Test_Boards">
-            <Cell Name="project_system_lib:LNA_test_4" />
             <Data_Display Name="test_s_param_ampli_LNA.dds" />
             <Cell Name="project_system_lib:test_s_param_ampli_LNA" />
             <Cell Name="project_system_lib:Test_PreFilterUP" />
@@ -118,8 +117,7 @@
             <Cell Name="project_system_lib:test_board_ideal_mixer" />
             <Data_Display Name="test_board_AP.dds" />
             <Cell Name="project_system_lib:test_board_AP" />
-            <Cell Name="project_system_lib:TEST_FILTRE_SF150868M4UU0" />
-            <Data_Display Name="TEST_FILTRE_SF150868M4UU0.dds" />
+            <Cell Name="project_system_lib:test_board_LNA" />
         </Folder>
         <Folder Name="Full_Module">
             <Cell Name="project_system_lib:Frequency_Transposer" />
@@ -151,6 +149,7 @@
             <Cell Name="project_system_lib:LNA Transmission Line" />
             <Cell Name="project_system_lib:Filter UP Transmission Line" />
             <Cell Name="project_system_lib:Filter DOWN Transmission Line" />
+            <Cell Name="project_system_lib:LNA_GRF2070" />
         </Folder>
         <Data_Files Name="dc_annotation\project_system_lib_%Frequency_%Transposer_schematic\annotation_1.xml" />
         <Data_Files Name="dc_annotation\project_system_lib_%Frequency_%Transposer_schematic\annotation_map.xml" />
