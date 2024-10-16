@@ -1,0 +1,24 @@
+
+hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
+    (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
+
+
+***** Simulation started at Wed, Oct 16 2024 17:02:45 +0200
+      Running on host: "d283-pc7.ensea.fr"
+      In Directory: "/users/guillois91/Documents/ECS_Projet_Transposition/system_project_ENSEA/ads/project_system_wrk/data"
+      User: "guillois", Process ID: 23293
+
+
+SP SP1[1] <project_system_lib:test_board_LNA_ligne_transmission:schematic>   freq=(500 MHz->1.2 GHz)
+
+
+Resource usage:
+    User time                 =     0.57 seconds.
+    System time               =     0.13 seconds.
+    Total CPU time            =     0.69 seconds.
+    Simulation stopwatch time =     0.16 seconds.
+    Total stopwatch time      =     1.42 seconds.
+
+    Physical memory used: 95.2 MBytes.
+    Incremental virtual memory (data only) used:  35.4 MBytes.
+
