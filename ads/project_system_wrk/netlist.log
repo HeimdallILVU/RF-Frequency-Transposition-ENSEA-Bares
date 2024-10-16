@@ -1,127 +1,44 @@
-; Top Design: "project_system_lib:Frequency_Transposer_Test_Board:schematic"
+; Top Design: "project_system_lib:Filter DOWN Transmission Line_v1:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Frequency_Transposer_Test_Board:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Filter DOWN Transmission Line_v1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: Circulateur IN
+; Cell Name: SYMB_Filtre_SF160868M4UU01
 ; View Name: schematic
-define "Circulateur#20IN" ( P1  P2  P3 ) 
-;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-end "Circulateur#20IN"
-
-; Library Name: project_system_lib
-; Cell Name: Circulateur OUT
-; View Name: schematic
-define "Circulateur#20OUT" ( P1  P2  P3 ) 
-;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB CheckPassivity=1 
-end "Circulateur#20OUT"
-
-; Library Name: project_system_lib
-; Cell Name: Filter DOWN
-; View Name: schematic
-define "Filter#20DOWN" ( P1  P2 ) 
+define SYMB_Filtre_SF160868M4UU01 ( P1  P2 ) 
 ;parameters 
 #uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=866.5 MHz Apass=1 dB Ripple=1 dB BWstop=869.5 MHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Filter#20DOWN"
+BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=19 MHz Apass=3 dB Ripple=2 dB BWstop=24 MHz Astop=20 dB StopType="open" MaxRej=35 dB N=0 IL=4 dB Qu=1E308 Z1=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } Z2=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } 
+end SYMB_Filtre_SF160868M4UU01
 
-; Library Name: project_system_lib
-; Cell Name: Filter UP
-; View Name: schematic
-define "Filter#20UP" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=2.436 GHz BWpass=72 MHz Apass=1 dB Ripple=3 dB BWstop=96 MHz Astop=30 dB StopType="open" MaxRej=35 dB N=0 IL=3.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Filter#20UP"
+MLIN2:TL1  N__3 N__4 Subst="MSub1" W=W mm L=L mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MLIN2:TL2  N__5 N__1 Subst="MSub1" W=W mm L=L mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+SYMB_Filtre_SF160868M4UU01:X1  N__4 N__5 
+Port:TermG1  N__3 0 Num=1 Z=50 Ohm Noise=yes 
+model MSub1 MSUB H=762 um Er=2.55 Mur=1 Cond=1.0E+50 Hu=1e+36 um T=35 um TanD=0.0018 Rough=0 um DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+Port:TermG2  N__1 0 Num=2 Z=100 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-; Library Name: project_system_lib
-; Cell Name: LNA
-; View Name: schematic
-define LNA ( P1  P2 ) 
-;parameters 
-end LNA
+SweepPlan: SP1_stim Center=868 MHz Span=50 MHz Lin=1001 
 
-; Library Name: project_system_lib
-; Cell Name: Melangeur DOWN
-; View Name: schematic
-define "Melangeur#20DOWN" ( P1  P2  P3 ) 
-;parameters 
-Mixer:MIX1  P1 P2 P3 SideBand=0 ConvGain=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-end "Melangeur#20DOWN"
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
 
-; Library Name: project_system_lib
-; Cell Name: Melangeur UP
-; View Name: schematic
-define "Melangeur#20UP" ( P1  P2  P3 ) 
-;parameters 
-Mixer:MIX1  P1 P2 P3 SideBand=1 ConvGain=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-end "Melangeur#20UP"
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 
-; Library Name: project_system_lib
-; Cell Name: Pre-Filter UP
-; View Name: schematic
-define "Pre-Filter#20UP" ( P1  P2 ) 
-parameters  Z1=50  Z2=50 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=1 dB Ripple=1 dB BWstop=20 MHz Astop=35 dB StopType="open" MaxRej=35 dB N=0 IL=4.5 dB Qu=1E308 Z1=Z1 Ohm Z2=Z2 Ohm 
-end "Pre-Filter#20UP"
+L=24.22 tune{ 1 to 50 by 0.1 } opt{ 20 to 40 }
+W=1.575 tune{ 0.5 to 3 by 0.1 } opt{ 1 to 2 }
+OptimGoal:OptimGoal1 Expr="20*log(mag(S(1,1)))" SimInstanceName="SP1" Weight=1.0 \
+IndepVar[1]="freq" \
+SpecLimitLine[1]="OptimGoal1_limit1" 
+SpecLimitLine:"OptimGoal1_limit1" Type="LessThan" Max=-20 Weight=1.0 \
+IndepVar[1]="freq" IndepMin[1]=860e6 IndepMax[1]=900e6 
 
-"Circulateur#20IN":X1  Vin N__0 N__1 
-"Circulateur#20OUT":X2  N__5 Vout N__3 
-"Filter#20DOWN":X3  N__7 N__6 
-"Pre-Filter#20UP":X9  N__14 N__13 Z1=50 Z2=50 
-LNA:X5  N__13 N__3 
-"Melangeur#20DOWN":X6  N__0 N__7 N__11 
-"Melangeur#20UP":X7  N__15 N__14 N__16 
-Short:X8  N__6 N__5 Mode=0 SaveCurrent=no
-"Filter#20UP":X10  N__1 N__15 
-Port:PORT3  N__16 0 Num=3 Z=50 Ohm P[1]=polar(dbmtow(0),0) Freq[1]=1.543 GHz    Noise=yes Pac=polar(dbmtow(0),0) LimitPhaseNoiseToCarrier=no 
-Port:PORT1  Vin 0 Num=1  Z=50 Ohm  Freq[1]=2.412 GHz Freq[2]=2.402 GHz Freq[3]=2.407 GHz Freq[4]=2.422 GHz Freq[5]=2.417 GHz    P[1]=polar(0.1,0) P[2]=polar(0.1,0) P[3]=polar(0.1,0) P[4]=polar(0.1,0) P[5]=polar(0.1,0) Noise=yes Pac=polar(dbmtow(0),0) 
+Optim:"Optim1" OptimType="hybrid" ErrorForm="L2" SAProgressReport=0 MaxIters=25 P=2 DesiredError=0.0 StatusLevel=4 FinalAnalysis="None" NormalizeGoals=yes SetBestValues=yes SaveSolns=yes SaveGoals=yes SaveOptimVars=no UpdateDataset=yes SaveNominal=no SaveAllIterations=no UseAllOptVars=yes UseAllGoals=yes SaveCurrentEF=no InitialTempControlMode=0 SANumTrialsPerIter=10 NumShootsPerIter=20 SATempControlAlpha=0.8 EnableCockpit=yes NormalizeError=yes SaveAllTrials=no UseAdvTermCriteria=no CostRelativeTol=1.0e-8 LimitOfContSmallImprovement=5 
 
-HB:Env1 Freq[1]=1.543 GHz \
-Freq[2]=2.407 GHz \
-Freq[3]=2.412 GHz \
-Freq[4]=2.417 GHz \
-Freq[5]=2.422 GHz \
- Order[1]=3 \
-Order[2]=2 \
-Order[3]=2 \
-Order[4]=2 \
-Order[5]=2 \
-  MaxOrder=5 StatusLevel=1 FundOversample=2 UseGear=yes EnvIntegOrder=2 \
- EnvBandwidth=1 EnvWarnPoorFit=yes EnvUsePoorFit=yes SweepVar="time" DevOpPtLevel=0 \
- EnvFitDisableCache=no SweepPlan="Env1_stim" OutputPlan="Env1_Output"
-
-OutputPlan:Env1_Output \
-       Type="Output" \
-       UseNodeNestLevel=yes \
-       NodeNestLevel=2 \
-       UseEquationNestLevel=yes \
-       EquationNestLevel=2 \
-       UseSavedEquationNestLevel=yes \
-       SavedEquationNestLevel=2 \
-       UseDeviceCurrentNestLevel=no \
-       DeviceCurrentNestLevel=0 \
-       DeviceCurrentDeviceType="All" \
-       DeviceCurrentSymSyntax=yes \
-       UseCurrentNestLevel=yes \
-       CurrentNestLevel=999 \
-       UseDeviceVoltageNestLevel=no \
-       DeviceVoltageNestLevel=0 \
-       DeviceVoltageDeviceType="All" 
-
-SweepPlan:Env1_stim Stop=100 nsec Step=10 nsec
-
-Tran:Env1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
- Freq[1]=1.543 GHz \
- Order[1]=3 \
- OutputPlan="Env1_Output"
-
-Component:tahb_Env1 Module="ATAHB" Type="ModelExtractor" Tran_Analysis="Env1_tran" HB_Analysis="Env1"
-
-R:R2  Vout 0 R=50 Ohm Noise=yes 
-Port:PORT2  N__11 0 Num=2 Z=50 Ohm P[1]=polar(dbmtow(0),0) Freq[1]=1.543 GHz    Noise=yes Pac=polar(dbmtow(0),0) LimitPhaseNoiseToCarrier=no 
