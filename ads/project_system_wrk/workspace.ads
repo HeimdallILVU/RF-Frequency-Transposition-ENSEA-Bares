@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="34" Version="100">
+<ADSWorkspace Revision="38" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -20,15 +20,6 @@
         <Dataset Name="Test_PreFilterUP.ds" />
         <Dataset Name="test_s_param_ampli_LNA.ds" />
         <Dataset Name="Work_low_cost_VCO.ds" />
-        <Data_Files Name="dc_annotation/project_system_lib_%L%N%A_test_1_schematic/annotation_1.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_%L%N%A_test_1_schematic/annotation_map.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_test_board_ideal_mixer_schematic/annotation_1.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_test_board_ideal_mixer_schematic/annotation_map.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_%Work_low_cost_%V%C%O_schematic/annotation_1.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_%Work_low_cost_%V%C%O_schematic/annotation_map.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_test_board_%A%P_schematic/annotation_1.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_test_board_%A%P_schematic/annotation_map.xml" />
-        <Data_Files Name="Work_low_cost_VCO_data/logFile.txt" />
         <Data_Files Name="test_FilterUP.ds" />
         <Data_Files Name="test_board_ideal_mixer.ds" />
         <Data_Files Name="test_board_AP.ds" />
@@ -59,39 +50,7 @@
         <Library Name="ads_rflib" />
         <Library Name="ads_simulation" />
         <Library Name="ads_datacmps" />
-        <Library Name="1xEV" />
-        <Library Name="3GPPFDD" />
-        <Library Name="3GPPFDD_10_99" />
-        <Library Name="Antennas_and_Propagation" />
-        <Library Name="CDMA" />
-        <Library Name="cdma2000" />
-        <Library Name="Circuit_Cosimulation" />
-        <Library Name="CMMB" />
-        <Library Name="Controllers" />
-        <Library Name="DTMB" />
-        <Library Name="DTV" />
-        <Library Name="EDGE" />
-        <Library Name="GSM" />
-        <Library Name="HDL_Blocks" />
-        <Library Name="HSDPA" />
-        <Library Name="HSUPA" />
-        <Library Name="Instruments" />
-        <Library Name="Interactive_Controls_and_Displays" />
-        <Library Name="LTE" />
-        <Library Name="Numeric" />
-        <Library Name="Obsolete" />
-        <Library Name="Signal_Converters" />
         <Library Name="Simulation_Sequencing" />
-        <Library Name="Sinks" />
-        <Library Name="SystemVue_Cosimulation" />
-        <Library Name="TDSCDMA" />
-        <Library Name="Timed" />
-        <Library Name="UMB" />
-        <Library Name="UWB" />
-        <Library Name="WLAN" />
-        <Library Name="WLAN_11n" />
-        <Library Name="WMAN" />
-        <Library Name="WMAN_16e" />
         <Library Name="project_system_lib" />
         <Folder Name="Emilie&apos;s_default">
             <Cell Name="project_system_lib:Circulateur IN" />
@@ -135,9 +94,6 @@
         <Log Name="netlist.log" />
         <Dataset Name="Frequency_Transposer_Test_Board.ds" />
         <Data_Files Name="Frequency_Transposer_Test_Board.ds" />
-        <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic/annotation_1.xml" />
-        <Data_Files Name="dc_annotation/project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic/annotation_map.xml" />
-        <Data_Files Name="Frequency_Transposer_Test_Board_data/logFile.txt" />
         <Substrate Name="project_system_lib:tech.subst" />
         <Folder Name="Emilie&apos;s default with Transmission Line">
             <Cell Name="project_system_lib:Pre-Filter UP Transmission Line" />
@@ -151,8 +107,6 @@
             <Cell Name="project_system_lib:Filter DOWN Transmission Line" />
             <Cell Name="project_system_lib:LNA_GRF2070" />
         </Folder>
-        <Data_Files Name="dc_annotation\project_system_lib_%Frequency_%Transposer_schematic\annotation_1.xml" />
-        <Data_Files Name="dc_annotation\project_system_lib_%Frequency_%Transposer_schematic\annotation_map.xml" />
         <Data_Files Name="dc_annotation\project_system_lib_%L%N%A_test_1_schematic\annotation_1.xml" />
         <Data_Files Name="dc_annotation\project_system_lib_%L%N%A_test_1_schematic\annotation_map.xml" />
         <Data_Files Name="dc_annotation\project_system_lib_%Work_low_cost_%V%C%O_schematic\annotation_1.xml" />
@@ -176,5 +130,13 @@
         <Dataset Name="TEST_FILTRE_SF150868M4UU0.ds" />
         <Data_Files Name="TEST_FILTRE_SF150868M4UU0.ds" />
         <Data_Files Name="TEST_FILTRE_SF150868M4UU0_data\logFile.txt" />
+        <Data_Display Name="test_board_LNA.dds" />
+        <Dataset Name="test_board_LNA.ds" />
+        <Data_Files Name="dc_annotation\project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic\annotation_1.xml" />
+        <Data_Files Name="dc_annotation\project_system_lib_%Frequency_%Transposer_%Test_%Board_schematic\annotation_map.xml" />
+        <Data_Files Name="Frequency_Transposer_Test_Board_data\logFile.txt" />
+        <Data_Files Name="test_board_LNA.ds" />
+        <Data_Files Name="test_board_LNA_data\logFile.txt" />
+        <Cell Name="project_system_lib:TEST_FILTRE_SF150868M4UU0" />
     </Workspace>
 </ADSWorkspace>

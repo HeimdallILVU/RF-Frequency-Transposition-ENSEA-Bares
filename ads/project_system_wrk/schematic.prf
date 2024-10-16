@@ -2,7 +2,7 @@ pathBend 1
 pathMiterPercent 0.000000
 pathEndCap 2
 pathLayerName default
-textFontName Arial For CAE
+textFontName Roboto
 textPoint 5
 textJustification 34
 textAngle 0.000000
@@ -10,12 +10,12 @@ textAbsolute 0
 instNameLayer 6
 instIDLayer 7
 instParam1Layer 8
-instTextFontName Arial For CAE
+instTextFontName Roboto
 instTextPoint 12
 instTextRows 15
 instTextAddOptionalParams 0
 instTextPrec 2
-wireLabelFontName Arial For CAE
+wireLabelFontName Roboto
 wireLabelPoint 12
 wireLabelColor 37
 fixedInstHighlightColor 2
@@ -39,7 +39,8 @@ portColor 5
 backgroundColor 42
 foregroundColor 10
 globalArcResolution 5.000000
-selectFilter 1535
+pcbViaArcResolution 5.000000
+selectFilter 1519
 selectMode 1
 shapeSelectMode 2
 selectBoxSize 10.000000
@@ -54,7 +55,7 @@ majorGridDisplayX 5
 majorGridDisplayY 5
 majorGridDisplayOn 1
 gridDisplayMode 0
-gridSnapOn 1
+gridSnapOn 0
 gridSnapMode 3
 gridColor 0
 windowLLX -2.000000
@@ -67,14 +68,14 @@ schemUnits 2
 layoutPrec -2
 layoutIncr 1
 layoutUnits 1
-backupCount 20
+backupCount 10000
 placePopUp 0
 placePinPopUp 1
 checkIntersection 0
 checkBinding 0
 shoveConnectionsOnCompoenentsParamChange 1
 plotPinNumbers 0
-plotPinNames 0
+plotPinNames 1
 plotPinNetNames 0
 plotPins 1
 rerouteWires 1
@@ -144,8 +145,8 @@ dsePrefLayoutLayer default
 newRouteAroundInstSym 1
 onscreenCoordMode 2
 editInPlaceBoxColor 3
-dseFixAllComponents 0
-dseKeepNets 0
+dseFixAllComponents 1
+dseKeepNets 1
 instTextTuneFormat 1
 instTextOptFormat 1
 instTextStatFormat 1
