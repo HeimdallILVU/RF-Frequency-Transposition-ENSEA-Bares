@@ -59,6 +59,7 @@ gridDisplayX 2
 gridDisplayY 2
 gridDisplayOn 1
 gridDisplaySameXY 1
+gridDisplaySameXY 1
 majorGridDisplayX 5
 majorGridDisplayY 5
 majorGridDisplayOn 1

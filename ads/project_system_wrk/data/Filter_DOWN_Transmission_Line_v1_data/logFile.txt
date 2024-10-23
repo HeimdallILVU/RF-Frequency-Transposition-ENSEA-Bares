@@ -1,0 +1,21 @@
+
+hpeesofsim (*) 595.shp Oct 31 2023, MINT version 5
+    (64-bit windows built: Tue Oct 31, 2023 22:23:19 +0000)
+
+
+***** Simulation started at Wed Oct 23 17:11:42 2024
+      Running on host: "LAPTOP-PSM28IJ9"
+      In Directory: "C:\Users\benji\Documents\GitHub\system_project_ENSEA\ads\project_system_wrk\data"
+      Process ID: 7996
+
+
+SP SP1[1] <project_system_lib:Filter DOWN Transmission Line_v1:schematic>   freq=(843 MHz->893 MHz)
+Message from hpeesofsim during SP analysis `SP1'.
+    Required filter order is calculated to be 5 for component
+                 `X1.BPF1.CMP1'
+
+
+
+Resource usage:
+  Total stopwatch time     =     0.86 seconds.
+
