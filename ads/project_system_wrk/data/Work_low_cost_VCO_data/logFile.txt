@@ -3,10 +3,10 @@ hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
     (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
 
 
-***** Simulation started at Wed, Oct 02 2024 17:28:07 +0200
+***** Simulation started at Wed, Oct 16 2024 17:14:12 +0200
       Running on host: "d283-pc1.ensea.fr"
       In Directory: "/users/robiauri55/Documents/Projet_System_git/system_project_ENSEA/ads/project_system_wrk/data"
-      User: "robiauri", Process ID: 15506
+      User: "robiauri", Process ID: 21986
 
 
 HB HB1[1] <project_system_lib:Work_low_cost_VCO:schematic>
@@ -42,9 +42,9 @@ Newton solver:
 Iter	KCL residual	Damp %	Sol update
 ------------------------------------------------------------------------------
 0.0*	7.09627 mA  	100.0             
-1.0*	7.09627 mA  	100.0	315.796 mV   
-2.0*	28.1504 mA  	100.0	315.796 mV   
-3.0*	73.8495 aA  	100.0	58.8643 aV   
+1.0*	7.09627 mA  	100.0	317.133 mV   
+2.0*	28.1504 mA  	100.0	317.133 mV   
+3.0*	11.3333 aA  	100.0	94.1923 aV   
 An HB truncation error may be present.
 o The HB truncation error is due to using a finite order 
   (number of harmonics) in the representation of the
@@ -60,18 +60,18 @@ o Number of waveforms violating the HB truncation error check:
 o Estimated max HB truncation error: 8.064e-03 @ waveform N__8 .
 o The maximal HB truncation error estimate is greater than the 
   achieved tolerance of 1.177e-06 for this waveform.
-o A time-domain plot of the N__13 waveform may show the error as 
+o A time-domain plot of the Vmod1 waveform may show the error as 
   Gibbs ripples.
 o To reduce the error, increase the order (number of harmonics) 
   and re-simulate.
 
 Resource usage:
-    User time                 =     0.55 seconds.
+    User time                 =     0.53 seconds.
     System time               =     0.13 seconds.
-    Total CPU time            =     0.68 seconds.
-    Simulation stopwatch time =     0.21 seconds.
-    Total stopwatch time      =     1.33 seconds.
+    Total CPU time            =     0.66 seconds.
+    Simulation stopwatch time =     0.14 seconds.
+    Total stopwatch time      =     1.25 seconds.
 
-    Physical memory used: 95 MBytes.
+    Physical memory used: 96.9 MBytes.
     Incremental virtual memory (data only) used:  35.5 MBytes.
 
