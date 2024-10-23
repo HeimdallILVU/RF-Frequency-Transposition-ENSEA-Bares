@@ -1,7 +1,8 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
     <Windows>
-        <Schematic geom="1,0,1,816,31,958,1000,1920,1080" lib="project_system_lib" width="958" view="schematic" cell="SYMB_Filtre_SF160868M4UU01" x1="815" y1="0" height="1000"/>
+        <Layout x1="198" width="1536" geom="1,0,0,199,206,1536,825,1920,1080" lib="project_system_lib" cell="SYMB_Filtre_SF160868M4UU01" view="layout" height="825" y1="175"/>
+        <Substrate file="substrate1" x1="211" width="1536" geom="1,0,0,212,182,1536,825,1920,1080" lib="project_system_lib" height="825" y1="151"/>
     </Windows>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

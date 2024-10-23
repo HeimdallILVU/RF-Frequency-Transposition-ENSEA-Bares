@@ -11,12 +11,10 @@ define SYMB_Filtre_SF160868M4UU01 ( P1  P2 )
 BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=19 MHz Apass=3 dB Ripple=2 dB BWstop=24 MHz Astop=20 dB StopType="open" MaxRej=35 dB N=0 IL=4 dB Qu=1E308 Z1=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } Z2=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } 
 end SYMB_Filtre_SF160868M4UU01
 
-MLIN2:TL1  N__3 N__4 Subst="MSub1" W=W mm L=L mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
-MLIN2:TL2  N__5 N__1 Subst="MSub1" W=W mm L=L mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
-SYMB_Filtre_SF160868M4UU01:X1  N__4 N__5 
+SYMB_Filtre_SF160868M4UU01:X1  N__6 N__5 
 Port:TermG1  N__3 0 Num=1 Z=50 Ohm Noise=yes 
-model MSub1 MSUB H=762 um Er=2.55 Mur=1 Cond=1.0E+50 Hu=1e+36 um T=35 um TanD=0.0018 Rough=0 um DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
-Port:TermG2  N__1 0 Num=2 Z=100 Ohm Noise=yes 
+Port:TermG2  N__1 0 Num=2 Z=50 Ohm Noise=yes 
+model MSub1 MSUB H=254 um Er=2.55 Mur=1 Cond=1.0E+50 Hu=1e+36 um T=35 um TanD=0.0018 Rough=0 um DielectricLossModel=1 FreqForEpsrTanD=10 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
@@ -33,7 +31,9 @@ OutputPlan:SP1_Output \
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 
 L=24.22 tune{ 1 to 50 by 0.1 } opt{ 20 to 40 }
-W=1.575 tune{ 0.5 to 3 by 0.1 } opt{ 1 to 2 }
+Lt=24.22 tune{ 1 to 50 by 0.1 } opt{ 20 to 40 }
+W1=0.67448 mm
+W2=0.4 mm
 OptimGoal:OptimGoal1 Expr="20*log(mag(S(1,1)))" SimInstanceName="SP1" Weight=1.0 \
 IndepVar[1]="freq" \
 SpecLimitLine[1]="OptimGoal1_limit1" 
@@ -42,3 +42,7 @@ IndepVar[1]="freq" IndepMin[1]=860e6 IndepMax[1]=900e6
 
 Optim:"Optim1" OptimType="hybrid" ErrorForm="L2" SAProgressReport=0 MaxIters=25 P=2 DesiredError=0.0 StatusLevel=4 FinalAnalysis="None" NormalizeGoals=yes SetBestValues=yes SaveSolns=yes SaveGoals=yes SaveOptimVars=no UpdateDataset=yes SaveNominal=no SaveAllIterations=no UseAllOptVars=yes UseAllGoals=yes SaveCurrentEF=no InitialTempControlMode=0 SANumTrialsPerIter=10 NumShootsPerIter=20 SATempControlAlpha=0.8 EnableCockpit=yes NormalizeError=yes SaveAllTrials=no UseAdvTermCriteria=no CostRelativeTol=1.0e-8 LimitOfContSmallImprovement=5 
 
+MTAPER:Taper1  N__4 N__6 Subst="MSub1" W1=W1 W2=W2 L=Lt mm 
+MTAPER:Taper2  N__7 N__5 Subst="MSub1" W1=W1 W2=W2 L=Lt mm 
+MLIN2:TL2  N__7 N__1 Subst="MSub1" W=W1 L=L mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MLIN2:TL1  N__3 N__4 Subst="MSub1" W=W1 L=L mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
