@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="39" Version="100">
+<ADSWorkspace Revision="41" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -170,5 +170,12 @@
         <Data_Files Name="test_board_LNA.ds" />
         <Cell Name="project_system_lib:TEST_FILTRE_SF150868M4UU0" />
         <Data_Files Name="test_board_LNA_data/logFile.txt" />
+        <Data_Display Name="test_board_LNA_ligne_transmission.dds" />
+        <Dataset Name="test_board_LNA_ligne_transmission.ds" />
+        <Dataset Name="test_board_LNA_ligne_transmission_tune.ds" />
+        <Data_Files Name="test_board_LNA_ligne_transmission.ds" />
+        <Data_Files Name="test_board_LNA_ligne_transmission_tune_data/logFile.txt" />
+        <Data_Files Name="test_board_LNA_ligne_transmission_tune.ds" />
+        <Data_Files Name="test_board_LNA_ligne_transmission_data/logFile.txt" />
     </Workspace>
 </ADSWorkspace>
