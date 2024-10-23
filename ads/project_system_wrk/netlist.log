@@ -3,9 +3,9 @@
 
 Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Frequency_Transposer_Transmission_Line:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: Circulateur IN
+; Cell Name: LNA_GRF2070
 ; View Name: schematic
-define "Circulateur#20IN" ( P1  P2  P3 ) 
+define LNA_GRF2070 ( RF_in  RF_out  Vdd  GND ) 
 ;parameters 
 #uselib "ckt" , "Circulator"
 Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
