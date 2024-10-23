@@ -1,0 +1,119 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Tue Oct 15 13:36:48 2024
+      Running on host: "Heimdall-Laptop"
+      In Directory: "C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\ads\project_system_wrk\data"
+      Process ID: 28208
+
+Warning detected by hpeesofsim in Substrate model during netlist flattening.
+    Simulations referencing substrate `MSub1' will not include metal loss
+    because metal thickness is zero.
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with only one device attached (topology corrected): 2
+
+
+HB Env1[1] <project_system_lib:Frequency_Transposer_Transmission_Line:schematic>
+Pt DC convergence is used.
+Message from hpeesofsim during TRAN analysis `Env1'.
+    Required filter order is calculated to be 7 for component
+                 `X10.BPF1.CMP1'
+
+Message from hpeesofsim during TRAN analysis `Env1'.
+    Required filter order is calculated to be 5 for component
+                 `X9.BPF1.CMP1'
+
+Message from hpeesofsim during TRAN analysis `Env1'.
+    Required filter order is calculated to be 45 for component
+                 `X3.BPF1.CMP1'
+
+Warning detected by hpeesofsim during TRAN analysis `Env1'.
+    Max filter order is limited to 15 for component
+             `X3.BPF1.CMP1'
+
+    Number of tones:   1.
+    Number of frequencies:   4.
+    Number of time samples:  16.
+    Number of HB equations (problem size): 595.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+Warning detected by hpeesofsim during AC Analysis `Env1'.
+    Linear S_Port `X2.CIR1.CMP1' is non-passive.
+
+Warning detected by hpeesofsim during AC Analysis `Env1'.
+    Linear S_Port `X1.CIR1.CMP1' is non-passive.
+
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	3.25107 mA  	100.0             
+1.0 	111.89 aA   	100.0	31.107 aV    
+
+HB Env1[1] <project_system_lib:Frequency_Transposer_Transmission_Line:schematic>   time=(0 s->100 ns)
+Warning detected by hpeesofsim during HB analysis `Env1'.
+    There are analysis frequencies inside Envelope bandwidths of other frequencies.
+    A simpler frequency grid may be possible and faster.
+
+.
+COMPONENT : X2.CIR1.CMP1 envelope bandwidth characterization - vector fit
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 0 Hz.
+
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 5 MHz.
+
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 10 MHz.
+
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 15 MHz.
+
+Warning detected by hpeesofsim during HB analysis `Env1'.
+     More than one mixing term has landed on frequency 20 MHz.
+
+
+COMPONENT : X1.CIR1.CMP1 envelope bandwidth characterization - vector fit
+
+COMPONENT : TL17 envelope bandwidth characterization
+
+COMPONENT : TL16 envelope bandwidth characterization
+
+COMPONENT : TL15 envelope bandwidth characterization
+
+COMPONENT : TL14 envelope bandwidth characterization
+
+COMPONENT : TL7 envelope bandwidth characterization
+
+COMPONENT : TL3 envelope bandwidth characterization
+
+COMPONENT : TL2 envelope bandwidth characterization
+
+COMPONENT : TL4 envelope bandwidth characterization
+
+COMPONENT : TL9 envelope bandwidth characterization
+
+COMPONENT : TL5 envelope bandwidth characterization
+
+COMPONENT : TL10 envelope bandwidth characterization
+
+COMPONENT : TL8 envelope bandwidth characterization
+
+COMPONENT : TL12 envelope bandwidth characterization
+
+COMPONENT : TL6 envelope bandwidth characterization
+
+COMPONENT : TL13 envelope bandwidth characterization
+
+COMPONENT : TL11 envelope bandwidth characterization
+
+COMPONENT : TL1 envelope bandwidth characterization
+..........
+
+Resource usage:
+  Total stopwatch time     =   370.71 seconds.
+
