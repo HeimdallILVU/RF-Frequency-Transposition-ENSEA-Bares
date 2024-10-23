@@ -1,10 +1,18 @@
-; Top Design: "project_system_lib:Work_low_cost_VCO:schematic"
+; Top Design: "project_system_lib:test_board_Inte_quartz:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Work_low_cost_VCO:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-HB:HB1 MaxOrder=4 Freq[1]=1.0 GHz Freq[2]=600 MHz Order[1]=1 Order[2]=1 StatusLevel=2 HBSS_WSP=0 OutputPlan="HB1_Output" 
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_Inte_quartz:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+L:L2  N__2 Vin L=L1 nH Noise=yes  
 
-OutputPlan:HB1_Output \
+L1=25.33 * 10
+L2=L1 * 4
+R=50 tune{ 25 to 75 by 5 }
+AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
+
+SweepPlan: AC1_stim Start=10 MHz Stop=10.0 GHz Step=0.001 GHz 
+
+OutputPlan:AC1_Output \
       Type="Output" \
       UseNodeNestLevel=yes \
       NodeNestLevel=2 \
@@ -22,22 +30,6 @@ OutputPlan:HB1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-Tran:HB1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
-Freq[1]=1.0 GHz Order[1]=1 
-
-Component:tahb_HB1 Module="ATAHB" Type="ModelExtractor" \ 
- Tran_Analysis="HB1_tran" HB_Analysis="HB1" 
-
-Port:Term1  Vmod1 0 Num=1 Z=50 Ohm Noise=yes 
-Port:PORT3  N__8 0 Num=3 Z=50 Ohm P[1]=polar(dbmtow(1),0) Freq[1]=1 GHz    Noise=yes Pac=polar(dbmtow(0),0) LimitPhaseNoiseToCarrier=no 
-
-freq_VCO=650
-freq_Quartz=1
-
-DefaultRIn=0
-DefaultROut=0
-DefaultRTemp=270
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  N__13 Vmod1 Fcenter=1.600 GHz BWpass=300 MHz Apass=1 dB Ripple=1 dB BWstop=400 MHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-Port:PORT2  N__12 0 Num=2 Z=50 Ohm P[1]=polar(dbmtow(1),0) Freq[1]=600 MHz    Noise=yes Pac=polar(dbmtow(0),0) LimitPhaseNoiseToCarrier=no 
-Mixer:MIX2  N__12 N__13 N__8 SideBand=1 ConvGain=dbpolar(1,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+V_Source:SRC2  Vin 0 Type="V_1Tone" V[1]=polar(1,0) V Freq[1]=1 GHz    Vac=polar(1,0) V SaveCurrent=1 
+C:C1  Vout 0 C=0.1 pF 
+R:R1  N__2 Vout R=50 Ohm Noise=yes 

@@ -1,0 +1,24 @@
+
+hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
+    (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
+
+
+***** Simulation started at Wed, Oct 23 2024 17:25:48 +0200
+      Running on host: "d283-pc5.ensea.fr"
+      In Directory: "/users/robiauri55/Documents/Projet_System_git/system_project_ENSEA/ads/project_system_wrk/data"
+      User: "robiauri", Process ID: 31068
+
+
+AC AC1[1] <project_system_lib:test_board_Inte_quartz:schematic>   freq=(10 MHz->10 GHz)
+
+
+Resource usage:
+    User time                 =     0.48 seconds.
+    System time               =     0.08 seconds.
+    Total CPU time            =     0.56 seconds.
+    Simulation stopwatch time =     0.14 seconds.
+    Total stopwatch time      =     0.96 seconds.
+
+    Physical memory used: 86.6 MBytes.
+    Incremental virtual memory (data only) used:  33.1 MBytes.
+
