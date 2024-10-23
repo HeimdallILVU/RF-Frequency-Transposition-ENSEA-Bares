@@ -1,0 +1,83 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Wed Oct 23 22:22:57 2024
+      Running on host: "Heimdall-Laptop"
+      In Directory: "C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\ads\project_system_wrk\data"
+      Process ID: 32172
+
+Warning detected by hpeesofsim during circuit set up.
+    Capacitor `X1.VCO1.CMP1' C=1 is unusually large.
+
+
+HB HB1[1] <project_system_lib:test_board_Dual_Mixer_with_VCO:schematic>
+    Number of tones:   1.
+    Number of frequencies:   4.
+    Number of time samples:  8.
+    Number of HB equations (problem size): 259.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	65.4545 A   	100.0             
+1.0 	7.99404 fA  	100.0	3.8271 fV    
+An HB truncation error may be present.
+o The HB truncation error is due to using a finite order 
+  (number of harmonics) in the representation of the
+  circuit signals.
+
+Waveform                Trunc error             Tolerance
+---------------------------------------------------------
+X1.Vfiltered_VCO        3.726e-06       >       1.585e-06
+
+o Number of waveforms violating the HB truncation error check:
+        1 out of 16 waveforms.
+o Estimated max HB truncation error: 3.726e-06 @ waveform X1.Vfiltered_VCO .
+o The maximal HB truncation error estimate is greater than the 
+  achieved tolerance of 1.585e-06 for this waveform.
+o To reduce the error, increase the order (number of harmonics) 
+  and re-simulate.
+
+HB HB1[1] <project_system_lib:test_board_Dual_Mixer_with_VCO:schematic>
+    Number of tones:   2.
+    Number of frequencies:   19.
+    Number of time samples:  64.
+    Number of HB equations (problem size): 1369.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	1.14832 A   	100.0             
+1.0 	942.54 mA   	100.0	261.472 mV   
+1.1*	338.737 uA  	100.0	95.8112 uV   
+2.0 	9.79728 fA  	100.0	6.59428 fV   
+
+HB HB1[1] <project_system_lib:test_board_Dual_Mixer_with_VCO:schematic>
+    Number of tones:   3.
+    Number of frequencies:   62.
+    Number of time samples:  512.
+    Number of HB equations (problem size): 4551.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
+    Preconditioner: DCP.
+    The general solver is used for HB Krylov preconditioning.
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	40.0019 mA  	100.0             
+1 	9.11766 nA  	100.0	1.46925 V   	  2	5.752e-16   
+2 	10.4753 fA  	100.0	64.4703 nV  	  3	1.923e-10   
+
+Resource usage:
+  Total stopwatch time     =     0.94 seconds.
+

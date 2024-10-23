@@ -1,7 +1,5 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows>
-        <DDS name="Frequency_Transposer_Transmission_Line.dds"/>
-    </Windows>
+    <Windows/>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

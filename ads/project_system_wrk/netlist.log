@@ -1,147 +1,65 @@
-; Top Design: "project_system_lib:Frequency_Transposer_Transmission_Line:schematic"
+; Top Design: "project_system_lib:test_board_Dual_Mixer_with_VCO:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:Frequency_Transposer_Transmission_Line:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_Dual_Mixer_with_VCO:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: LNA_GRF2070
+; Cell Name: Dual_Mixer_with_VCO
 ; View Name: schematic
-define LNA_GRF2070 ( RF_in  RF_out  Vdd  GND ) 
+define Dual_Mixer_with_VCO ( Gnd  "RF_0\.869_IN"  "RF_0\.869_OUT"  "RF_2\.4_IN"  "RF_2\.4_OUT"  VCO_Ref ) 
 ;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-end "Circulateur#20IN"
+#uselib "sml" , "VCO"
+VCO:VCO1  VCO_Ref Vvco Kv=720 kHz Freq=543 MHz P=-j*dbmtow(80) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
+C:C1  Vvco Gnd C=33 nF 
+C:C2  N__17 Vvco C=1.3 pF 
+L:L1  Vvco Gnd L=2.4 nH Noise=yes  
+L:L2  Vfiltered_VCO N__17 L=56 nH Noise=yes  
+L:L3  Vfiltered_VCO Gnd L=2.4 nH Noise=yes  
+C:C3  Gnd Vfiltered_VCO C=33 pF 
+C:C4  Gnd Vfiltered_lo C=33 pF 
+C:C5  Vlo Gnd C=33 nF 
+C:C6  N__20 Vlo C=180 fF 
+L:L4  Vfiltered_lo Gnd L=300 pH Noise=yes  
+L:L5  Vfiltered_lo N__20 L=56 nH Noise=yes  
+L:L6  Vlo Gnd L=300 pH Noise=yes  
+C:C7  Gnd Vfiltered_crystal C=82 pF 
+C:C8  N__5 Vcrystal C=120 fF 
+L:L7  Vfiltered_crystal Gnd L=300 pH Noise=yes  
+L:L8  Vfiltered_crystal N__5 L=220 nH Noise=yes  
+#uselib "ckt" , "Vf_Square"
+Vf_Square:SRC1  Vcrystal Gnd Vpeak=2.55 V Vdc=1.45 V Freq=1 GHz Rise=0.4 nsec Fall=0.4 nsec Delay=0 nsec Weight=0 Harmonics=4 SaveCurrent=1 
+Mixer:MIX7  Vfiltered_VCO Vlo Vfiltered_crystal SideBand=0 ImageRej=-15 dB LO_Rej1=-15 dB LO_Rej2=-15 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+Mixer:MIX8  "RF_2\.4_IN" "RF_0\.869_OUT" Vfiltered_lo SideBand=0 ImageRej=-15 dB LO_Rej1=-15 dB LO_Rej2=-15 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+Mixer:MIX9  "RF_0\.869_IN" "RF_2\.4_OUT" Vfiltered_lo SideBand=0 ImageRej=-15 dB LO_Rej1=-15 dB LO_Rej2=-15 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+end Dual_Mixer_with_VCO
 
-; Library Name: project_system_lib
-; Cell Name: Circulateur OUT
-; View Name: schematic
-define "Circulateur#20OUT" ( P1  P2  P3 ) 
-;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=100. dB CheckPassivity=1 
-end "Circulateur#20OUT"
+Dual_Mixer_with_VCO:X1  0 Vin2 Vout Vin Vout2 0 
+Port:PORT1  Vin 0 Num=1  Z=50 Ohm  Freq[1]=2412 MHz    P[1]=polar(dbmtow(10),0) Noise=yes Pac=polar(dbmtow(0),0) 
+R:R1  Vout 0 R=50 Ohm Noise=yes 
+HB:HB1 MaxOrder=4 Freq[1]=0.543 GHz Freq[2]=1.000 GHz Freq[3]=2.412 GHz Order[1]=3 Order[2]=3 Order[3]=3 StatusLevel=2 HBSS_WSP=0 OutputPlan="HB1_Output" 
 
-; Library Name: project_system_lib
-; Cell Name: Filter DOWN
-; View Name: schematic
-define "Filter#20DOWN" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=866.5 MHz Apass=1 dB Ripple=1 dB BWstop=869.5 MHz Astop=20 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Filter#20DOWN"
+OutputPlan:HB1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
 
-; Library Name: project_system_lib
-; Cell Name: Filter UP
-; View Name: schematic
-define "Filter#20UP" ( P1  P2 ) 
-;parameters 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=2.436 GHz BWpass=72 MHz Apass=1 dB Ripple=3 dB BWstop=96 MHz Astop=30 dB StopType="open" MaxRej=35 dB N=0 IL=3.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
-end "Filter#20UP"
+Tran:HB1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=0.543 GHz Order[1]=3 
 
-; Library Name: project_system_lib
-; Cell Name: LNA
-; View Name: schematic
-define LNA ( P1  P2 ) 
-;parameters 
-end LNA
+Component:tahb_HB1 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB1_tran" HB_Analysis="HB1" 
 
-; Library Name: project_system_lib
-; Cell Name: Melangeur DOWN
-; View Name: schematic
-define "Melangeur#20DOWN" ( P1  P2  P3 ) 
-;parameters 
-Mixer:MIX1  P1 P2 P3 SideBand=0 ConvGain=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-end "Melangeur#20DOWN"
-
-; Library Name: project_system_lib
-; Cell Name: Melangeur UP
-; View Name: schematic
-define "Melangeur#20UP" ( P1  P2  P3 ) 
-;parameters 
-Mixer:MIX1  P1 P2 P3 SideBand=1 ConvGain=dbpolar(0,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-end "Melangeur#20UP"
-
-; Library Name: project_system_lib
-; Cell Name: Pre-Filter UP
-; View Name: schematic
-define "Pre-Filter#20UP" ( P1  P2 ) 
-parameters  Z1=50  Z2=50 
-#uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=869 MHz BWpass=8 MHz Apass=1 dB Ripple=1 dB BWstop=20 MHz Astop=35 dB StopType="open" MaxRej=35 dB N=0 IL=4.5 dB Qu=1E308 Z1=Z1 Ohm Z2=Z2 Ohm 
-end "Pre-Filter#20UP"
-
-"Circulateur#20IN":X1  N__8 N__9 N__1 
-"Circulateur#20OUT":X2  N__32 Vout N__3 
-"Filter#20DOWN":X3  N__7 N__6 
-"Pre-Filter#20UP":X9  N__14 N__19 Z1=50 Z2=50 
-LNA:X5  N__13 N__18 
-"Melangeur#20DOWN":X6  N__0 N__36 N__11 
-"Melangeur#20UP":X7  N__15 N__38 N__16 
-Short:X8  N__21 N__35 Mode=0 SaveCurrent=no
-"Filter#20UP":X10  N__20 N__12 
-
-HB:Env1 Freq[1]=1.543 GHz \
-Freq[2]=2.402 GHz \
-Freq[3]=2.407 GHz \
-Freq[4]=2.412 GHz \
-Freq[5]=2.417 GHz \
-Freq[6]=2.422 GHz \
- Order[1]=3 \
-Order[2]=2 \
-Order[3]=2 \
-Order[4]=2 \
-Order[5]=2 \
-Order[6]=2 \
-  MaxOrder=5 StatusLevel=1 FundOversample=2 UseGear=yes EnvIntegOrder=2 \
- EnvBandwidth=1 EnvWarnPoorFit=yes EnvUsePoorFit=yes SweepVar="time" DevOpPtLevel=0 \
- EnvFitDisableCache=no SweepPlan="Env1_stim" OutputPlan="Env1_Output"
-
-OutputPlan:Env1_Output \
-       Type="Output" \
-       UseNodeNestLevel=yes \
-       NodeNestLevel=2 \
-       UseEquationNestLevel=yes \
-       EquationNestLevel=2 \
-       UseSavedEquationNestLevel=yes \
-       SavedEquationNestLevel=2 \
-       UseDeviceCurrentNestLevel=no \
-       DeviceCurrentNestLevel=0 \
-       DeviceCurrentDeviceType="All" \
-       DeviceCurrentSymSyntax=yes \
-       UseCurrentNestLevel=yes \
-       CurrentNestLevel=999 \
-       UseDeviceVoltageNestLevel=no \
-       DeviceVoltageNestLevel=0 \
-       DeviceVoltageDeviceType="All" 
-
-SweepPlan:Env1_stim Stop=100 nsec Step=10 nsec
-
-Tran:Env1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
- Freq[1]=1.543 GHz \
- Order[1]=3 \
- OutputPlan="Env1_Output"
-
-Component:tahb_Env1 Module="ATAHB" Type="ModelExtractor" Tran_Analysis="Env1_tran" HB_Analysis="Env1"
-
-R:R2  N__39 0 R=50 Ohm Noise=yes 
-MLIN2:TL1  Vin N__8 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL11  N__38 N__14 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL13  N__12 N__15 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL6  N__6 N__21 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL12  N__16 N__34 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL8  Vout N__39 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL10  N__19 N__13 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL5  N__11 N__29 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL9  N__18 N__33 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL4  N__36 N__7 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL2  N__9 N__31 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL3  N__31 N__0 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL7  N__35 N__25 Subst="MSub1" W=300 um L=16000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-model MSub1 MSUB H=1600 um Er=4.5 Mur=1 Cond=1.0E+50 Hu=1e+36 um T=0 um TanD=0 Rough=0 um DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
-MLIN2:TL14  N__30 N__20 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL15  N__1 N__30 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL16  N__3 N__33 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-MLIN2:TL17  N__25 N__32 Subst="MSub1" W=300 um L=8000 um Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
-Port:PORT2  N__29 0 Num=2 Z=50 Ohm P[1]=polar(dbmtow(0),0) Freq[1]=1.543 GHz    Noise=yes Pac=polar(dbmtow(0),0) 
-Port:PORT3  N__34 0 Num=3 Z=50 Ohm P[1]=polar(dbmtow(0),0) Freq[1]=1.543 GHz    Noise=yes Pac=polar(dbmtow(0),0) 
-Port:PORT4  Vin 0 Num=1  Z=50 Ohm  Freq[1]=2.402 GHz Freq[2]=2.407 GHz Freq[3]=2.412 GHz Freq[4]=2.417 GHz Freq[5]=2.422 GHz    P[1]=polar(0.02,0) P[2]=polar(0.02,0) P[3]=polar(0.02,0) P[4]=polar(0.02,0) P[5]=polar(0.02,0) Noise=yes Pac=polar(dbmtow(0),0) 
+Port:PORT2  Vin2 0 Num=2  Z=50 Ohm  Freq[1]=869 MHz    P[1]=polar(dbmtow(10),0) Noise=yes Pac=polar(dbmtow(0),0) 
+R:R2  Vout2 0 R=50 Ohm Noise=yes 
