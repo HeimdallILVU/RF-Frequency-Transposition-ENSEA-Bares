@@ -3,63 +3,94 @@
 
 Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_Dual_Mixer_with_VCO:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
+; Cell Name: Mixer - LT5560EDD
+; View Name: schematic
+define "Mixer#20-#20LT5560EDD" ( EN  Gnd  "IN+"  "IN-"  "LO+"  "LO-"  "OUT+"  "OUT-"  Vcc ) 
+;parameters 
+Mixer:MIX7  "IN-" "OUT+" "LO+" SideBand=0 ImageRej=-15 dB LO_Rej1=-50 dB LO_Rej2=-40 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 PminLO=-10dBm Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+R:R1  "IN+" N__6 R=0 Ohm Noise=yes 
+R:R2  N__6 "OUT-" R=0 Ohm Noise=yes 
+R:R3  "LO-" N__6 R=0 Ohm Noise=yes 
+R:R4  EN N__6 R=1 kOhm Noise=yes 
+R:R5  N__6 Vcc R=1 kOhm Noise=yes 
+R:R6  N__6 Gnd R=0 Ohm Noise=yes 
+end "Mixer#20-#20LT5560EDD"
+
+; Library Name: project_system_lib
 ; Cell Name: Dual_Mixer_with_VCO
 ; View Name: schematic
-define Dual_Mixer_with_VCO ( Gnd  "RF_0\.869_IN"  "RF_0\.869_OUT"  "RF_2\.4_IN"  "RF_2\.4_OUT"  VCO_Ref ) 
+define Dual_Mixer_with_VCO ( Gnd  Vifin  Vifout  Vrfin  Vrfout  VCO_Ref  Vcc ) 
 ;parameters 
 #uselib "sml" , "VCO"
-VCO:VCO1  VCO_Ref Vvco Kv=720 kHz Freq=543 MHz P=-j*dbmtow(80) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
-C:C1  Vvco Gnd C=33 nF 
+VCO:VCO1  VCO_Ref Vvco Kv=720 kHz Freq=543 MHz P=-j*dbmtow(0.01) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
+L:L9  Vfiltered_lo N__29 L=56 nH Noise=yes  
+C:C11  N__29 N__25 C=180 fF 
+C:C4  Gnd N__25 C=33 pF 
+#uselib "ckt" , "Vf_Square"
+Vf_Square:SRC1  Vcrystal Gnd Vpeak=2.55 V Vdc=1.45 V Freq=1 GHz Rise=0.4 nsec Fall=0.4 nsec Delay=0 nsec Weight=0 Harmonics=16 SaveCurrent=1 
 C:C2  N__17 Vvco C=1.3 pF 
-L:L1  Vvco Gnd L=2.4 nH Noise=yes  
 L:L2  Vfiltered_VCO N__17 L=56 nH Noise=yes  
 L:L3  Vfiltered_VCO Gnd L=2.4 nH Noise=yes  
 C:C3  Gnd Vfiltered_VCO C=33 pF 
-C:C4  Gnd Vfiltered_lo C=33 pF 
-C:C5  Vlo Gnd C=33 nF 
 C:C6  N__20 Vlo C=180 fF 
-L:L4  Vfiltered_lo Gnd L=300 pH Noise=yes  
-L:L5  Vfiltered_lo N__20 L=56 nH Noise=yes  
-L:L6  Vlo Gnd L=300 pH Noise=yes  
+L:L4  N__25 Gnd L=300 pH Noise=yes  
+L:L5  N__25 N__20 L=56 nH Noise=yes  
 C:C7  Gnd Vfiltered_crystal C=82 pF 
 C:C8  N__5 Vcrystal C=120 fF 
 L:L7  Vfiltered_crystal Gnd L=300 pH Noise=yes  
 L:L8  Vfiltered_crystal N__5 L=220 nH Noise=yes  
-#uselib "ckt" , "Vf_Square"
-Vf_Square:SRC1  Vcrystal Gnd Vpeak=2.55 V Vdc=1.45 V Freq=1 GHz Rise=0.4 nsec Fall=0.4 nsec Delay=0 nsec Weight=0 Harmonics=4 SaveCurrent=1 
-Mixer:MIX7  Vfiltered_VCO Vlo Vfiltered_crystal SideBand=0 ImageRej=-15 dB LO_Rej1=-15 dB LO_Rej2=-15 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-Mixer:MIX8  "RF_2\.4_IN" "RF_0\.869_OUT" Vfiltered_lo SideBand=0 ImageRej=-15 dB LO_Rej1=-15 dB LO_Rej2=-15 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-Mixer:MIX9  "RF_0\.869_IN" "RF_2\.4_OUT" Vfiltered_lo SideBand=0 ImageRej=-15 dB LO_Rej1=-15 dB LO_Rej2=-15 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+"Mixer#20-#20LT5560EDD":X1  Vcc Gnd Gnd Vfiltered_VCO Vfiltered_crystal Gnd Vlo Gnd Vcc 
+C:C9  Gnd Vcc C=1 uF 
+C:C10  Gnd Vcc C=1 nF 
+"Mixer#20-#20LT5560EDD":X2  Vcc N__39 Gnd Vrfin Vfiltered_lo Gnd Vifout Gnd Gnd 
+"Mixer#20-#20LT5560EDD":X3  Vcc N__44 Gnd Vifin Vfiltered_lo Gnd Vrfout Gnd Gnd 
+C:C12  Vcc Gnd C=1 uF 
+C:C13  Vcc Gnd C=1 nF 
+C:C14  Vcc Gnd C=1 uF 
+C:C15  Vcc Gnd C=1 nF 
 end Dual_Mixer_with_VCO
 
-Dual_Mixer_with_VCO:X1  0 Vin2 Vout Vin Vout2 0 
+Dual_Mixer_with_VCO:X1  0 Vin2 Vout Vin Vout2 0 N__6 
 Port:PORT1  Vin 0 Num=1  Z=50 Ohm  Freq[1]=2412 MHz    P[1]=polar(dbmtow(10),0) Noise=yes Pac=polar(dbmtow(0),0) 
 R:R1  Vout 0 R=50 Ohm Noise=yes 
-HB:HB1 MaxOrder=4 Freq[1]=0.543 GHz Freq[2]=1.000 GHz Freq[3]=2.412 GHz Order[1]=3 Order[2]=3 Order[3]=3 StatusLevel=2 HBSS_WSP=0 OutputPlan="HB1_Output" 
 
-OutputPlan:HB1_Output \
-      Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
+HB:Env1 Freq[1]=0.543 GHz \
+Freq[2]=1.000 GHz \
+Freq[3]=2.412 GHz \
+ Order[1]=3 \
+Order[2]=3 \
+Order[3]=3 \
+  MaxOrder=3 StatusLevel=1 FundOversample=2 Restart=no UseGear=yes \
+ EnvIntegOrder=2 EnvBandwidth=1 EnvWarnPoorFit=yes EnvUsePoorFit=yes SweepVar="time" \
+ DevOpPtLevel=0 EnvFitDisableCache=no SweepPlan="Env1_stim" OutputPlan="Env1_Output"
 
-Tran:HB1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
-Freq[1]=0.543 GHz Order[1]=3 
+OutputPlan:Env1_Output \
+       Type="Output" \
+       UseNodeNestLevel=yes \
+       NodeNestLevel=2 \
+       UseEquationNestLevel=yes \
+       EquationNestLevel=2 \
+       UseSavedEquationNestLevel=yes \
+       SavedEquationNestLevel=2 \
+       UseDeviceCurrentNestLevel=no \
+       DeviceCurrentNestLevel=0 \
+       DeviceCurrentDeviceType="All" \
+       DeviceCurrentSymSyntax=yes \
+       UseCurrentNestLevel=yes \
+       CurrentNestLevel=999 \
+       UseDeviceVoltageNestLevel=no \
+       DeviceVoltageNestLevel=0 \
+       DeviceVoltageDeviceType="All" 
 
-Component:tahb_HB1 Module="ATAHB" Type="ModelExtractor" \ 
- Tran_Analysis="HB1_tran" HB_Analysis="HB1" 
+SweepPlan:Env1_stim Stop=100 nsec Step=0.1 nsec
+
+Tran:Env1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+ Freq[1]=0.543 GHz \
+ Order[1]=3 \
+ OutputPlan="Env1_Output"
+
+Component:tahb_Env1 Module="ATAHB" Type="ModelExtractor" Tran_Analysis="Env1_tran" HB_Analysis="Env1"
 
 Port:PORT2  Vin2 0 Num=2  Z=50 Ohm  Freq[1]=869 MHz    P[1]=polar(dbmtow(10),0) Noise=yes Pac=polar(dbmtow(0),0) 
 R:R2  Vout2 0 R=50 Ohm Noise=yes 
+V_Source:SRC1  N__6 0 Type="V_DC" Vdc=3.3 V SaveCurrent=1 

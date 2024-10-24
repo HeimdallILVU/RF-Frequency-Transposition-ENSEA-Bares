@@ -1,0 +1,21 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Thu Oct 24 14:00:18 2024
+      Running on host: "Heimdall-Laptop"
+      In Directory: "C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\ads\project_system_wrk\data"
+      Process ID: 18644
+
+
+SP SP1[1] <project_system_lib:test_board_AFS14A72:schematic>   freq=(1 GHz->3 GHz)
+Message from hpeesofsim during SP analysis `SP1'.
+    Required filter order is calculated to be 9 for component
+                 `X8.BPF1.CMP1'
+
+
+
+Resource usage:
+  Total stopwatch time     =     0.86 seconds.
+

@@ -10,7 +10,7 @@ ddoId = get_new(ddsId, "Object");
 // DataDisplay Object:
 	set(ddoId, "Path", dds_get_exec_path(what_file(0)));
 	set(ddoId, "Name", dds_get_exec_file(what_file(0)));
-	set(ddoId, "FileModifiedDateAndTime", "2024-10-23T20:30:20Z");
+	set(ddoId, "FileModifiedDateAndTime", "2024-10-24T07:19:02Z");
 	set(ddoId, "FileCreatedDateAndTime", "2024-10-23T18:45:17Z");
 	dssId = get(ddoId, "DatasetServer");
 // Default Dataset
@@ -76,7 +76,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -192,7 +192,7 @@ traceID = get_new(goId0, "Trace", "dBm(Vin)", "X Axis", "Y Axis");
 		}
 		set(traceID, "TraceLabelOffset", 100);
 	}
-markerID = get_new(traceID, "MarkerNew", "m1", "2412000000.00000000000000000000000000000000", 0, "", "-10.00000000000000710542735760100186", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m1", "2412000000.00000000000000000000000000000000", 10000, "", "-10.00000000000000710542735760100186", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 471110037);
@@ -245,8 +245,8 @@ markerID = get_new(traceID, "MarkerNew", "m1", "2412000000.000000000000000000000
 		set(markerID, "MkrReadoutFillColor", 0);
 		set(markerID, "MkrReadoutFillPattern", -1);
 		set(markerID, "MkrReadoutLeft", -8291);
-		set(markerID, "MkrReadoutRight", -6884);
-		set(markerID, "MkrReadoutBottom", -3165);
+		set(markerID, "MkrReadoutRight", -6888);
+		set(markerID, "MkrReadoutBottom", -3002);
 		set(markerID, "MkrReadoutTop", -3710);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -269,7 +269,7 @@ goId0 = get_new(pageId, "Plot");
 // Graphical Object:
 	set(goId0, "Right", -4400);
 	set(goId0, "Bottom", 6629);
-	set(goId0, "Left", -8794);
+	set(goId0, "Left", -8861);
 	set(goId0, "Top", 3625);
 	set(goId0, "Zrot", 0);
 	set(goId0, "Yrot", 0);
@@ -283,7 +283,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "FillColor", 0);
 // Plot base...
 	set(goId0, "LegendOnOff", TRUE);
-	set(goId0, "LeftMargin", 544);
+	set(goId0, "LeftMargin", 611);
 	set(goId0, "RightMargin", 100);
 	set(goId0, "TopMargin", 125);
 	set(goId0, "BottomMargin", 504);
@@ -308,7 +308,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -329,10 +329,10 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineThick", 7);
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
-		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -15);
-		 set(axisID, "MaxValue", 10);
-		 set(axisID, "StepSize", 5);
+		 set(axisID, "AutoscaleOnOff", FALSE);
+		 set(axisID, "MinValue", -100);
+		 set(axisID, "MaxValue", 30);
+		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
 		 set(axisID, "Format", ddsFormatAutomatic);
@@ -384,7 +384,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
-traceID = get_new(goId0, "Trace", "dB(Vcrystal)", "X Axis", "Y Axis");
+traceID = get_new(goId0, "Trace", "dBm(Vcrystal)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
 		set(traceID, "TraceType", ddsAutomaticTraceType);
@@ -473,7 +473,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -494,10 +494,10 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineThick", 7);
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
-		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -300);
-		 set(axisID, "MaxValue", 50);
-		 set(axisID, "StepSize", 50);
+		 set(axisID, "AutoscaleOnOff", FALSE);
+		 set(axisID, "MinValue", -100);
+		 set(axisID, "MaxValue", 30);
+		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
 		 set(axisID, "Format", ddsFormatAutomatic);
@@ -549,7 +549,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
-traceID = get_new(goId0, "Trace", "dB(Vvco)", "X Axis", "Y Axis");
+traceID = get_new(goId0, "Trace", "dBm(Vvco)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
 		set(traceID, "TraceType", ddsAutomaticTraceType);
@@ -638,7 +638,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -754,7 +754,7 @@ traceID = get_new(goId0, "Trace", "dBm(Vout)", "X Axis", "Y Axis");
 		}
 		set(traceID, "TraceLabelOffset", 100);
 	}
-markerID = get_new(traceID, "MarkerNew", "m2", "869000000.00000000000000000000000000000000", 0, "", "", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m2", "869000000.00000000000000000000000000000000", 10000, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 898379222);
@@ -807,8 +807,8 @@ markerID = get_new(traceID, "MarkerNew", "m2", "869000000.0000000000000000000000
 		set(markerID, "MkrReadoutFillColor", 0);
 		set(markerID, "MkrReadoutFillPattern", -1);
 		set(markerID, "MkrReadoutLeft", -3375);
-		set(markerID, "MkrReadoutRight", -1868);
-		set(markerID, "MkrReadoutBottom", -3080);
+		set(markerID, "MkrReadoutRight", -1872);
+		set(markerID, "MkrReadoutBottom", -2917);
 		set(markerID, "MkrReadoutTop", -3625);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -870,7 +870,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -891,9 +891,9 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineThick", 7);
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
-		 set(axisID, "AutoscaleOnOff", TRUE);
+		 set(axisID, "AutoscaleOnOff", FALSE);
 		 set(axisID, "MinValue", -100);
-		 set(axisID, "MaxValue", 0);
+		 set(axisID, "MaxValue", 30);
 		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -946,7 +946,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
-traceID = get_new(goId0, "Trace", "dB(Vfiltered_crystal)", "X Axis", "Y Axis");
+traceID = get_new(goId0, "Trace", "dBm(Vfiltered_crystal)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
 		set(traceID, "TraceType", ddsAutomaticTraceType);
@@ -1035,7 +1035,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -1056,9 +1056,9 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineThick", 7);
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
-		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -140);
-		 set(axisID, "MaxValue", 20);
+		 set(axisID, "AutoscaleOnOff", FALSE);
+		 set(axisID, "MinValue", -100);
+		 set(axisID, "MaxValue", 30);
 		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -1111,7 +1111,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
-traceID = get_new(goId0, "Trace", "dB(Vfiltered_VCO)", "X Axis", "Y Axis");
+traceID = get_new(goId0, "Trace", "dBm(Vfiltered_VCO)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
 		set(traceID, "TraceType", ddsAutomaticTraceType);
@@ -1200,7 +1200,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -1221,10 +1221,10 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineThick", 7);
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
-		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -500);
-		 set(axisID, "MaxValue", 0);
-		 set(axisID, "StepSize", 100);
+		 set(axisID, "AutoscaleOnOff", FALSE);
+		 set(axisID, "MinValue", -100);
+		 set(axisID, "MaxValue", 30);
+		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
 		 set(axisID, "Format", ddsFormatAutomatic);
@@ -1276,7 +1276,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
-traceID = get_new(goId0, "Trace", "dB(Vlo)", "X Axis", "Y Axis");
+traceID = get_new(goId0, "Trace", "dBm(Vlo)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
 		set(traceID, "TraceType", ddsAutomaticTraceType);
@@ -1365,7 +1365,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -1386,10 +1386,10 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "LineThick", 7);
 		 set(axisID, "LineType", 0);
 		 set(axisID, "TickFontSize", 112);
-		 set(axisID, "AutoscaleOnOff", TRUE);
-		 set(axisID, "MinValue", -600);
-		 set(axisID, "MaxValue", 0);
-		 set(axisID, "StepSize", 100);
+		 set(axisID, "AutoscaleOnOff", FALSE);
+		 set(axisID, "MinValue", -100);
+		 set(axisID, "MaxValue", 30);
+		 set(axisID, "StepSize", 20);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
 		 set(axisID, "Format", ddsFormatAutomatic);
@@ -1441,7 +1441,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "Bottom X Axis");
 		 set(axisID, "Format", ddsFormatAutomatic);
 		 set(axisID, "NumDigits", 3);
 	}
-traceID = get_new(goId0, "Trace", "dB(Vfiltered_lo)", "X Axis", "Y Axis");
+traceID = get_new(goId0, "Trace", "dBm(Vfiltered_lo)", "X Axis", "Y Axis");
 // Trace:
 	if (traceID != NULL) {
 		set(traceID, "TraceType", ddsAutomaticTraceType);
@@ -1530,7 +1530,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -1646,7 +1646,7 @@ traceID = get_new(goId0, "Trace", "dBm(Vin2)", "X Axis", "Y Axis");
 		}
 		set(traceID, "TraceLabelOffset", 100);
 	}
-markerID = get_new(traceID, "MarkerNew", "m3", "869000000.00000000000000000000000000000000", 0, "", "", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m3", "869000000.00000000000000000000000000000000", 10000, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 1781550098);
@@ -1699,9 +1699,9 @@ markerID = get_new(traceID, "MarkerNew", "m3", "869000000.0000000000000000000000
 		set(markerID, "MkrReadoutFillColor", 0);
 		set(markerID, "MkrReadoutFillPattern", -1);
 		set(markerID, "MkrReadoutLeft", -8250);
-		set(markerID, "MkrReadoutRight", -6743);
-		set(markerID, "MkrReadoutBottom", 920);
-		set(markerID, "MkrReadoutTop", 375);
+		set(markerID, "MkrReadoutRight", -6747);
+		set(markerID, "MkrReadoutBottom", 958);
+		set(markerID, "MkrReadoutTop", 250);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
 		set(markerID, "MkrIndicatorType", 0);
@@ -1762,7 +1762,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 9000000000);
+		 set(axisID, "MaxValue", 8000000000);
 		 set(axisID, "StepSize", 1000000000);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Roboto");
@@ -1878,7 +1878,7 @@ traceID = get_new(goId0, "Trace", "dBm(Vout2)", "X Axis", "Y Axis");
 		}
 		set(traceID, "TraceLabelOffset", 100);
 	}
-markerID = get_new(traceID, "MarkerNew", "m4", "2412000000.00000000000000000000000000000000", 0, "", "", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m4", "2412000000.00000000000000000000000000000000", 10000, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 433799110);
@@ -1930,10 +1930,10 @@ markerID = get_new(traceID, "MarkerNew", "m4", "2412000000.000000000000000000000
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutFillColor", 0);
 		set(markerID, "MkrReadoutFillPattern", -1);
-		set(markerID, "MkrReadoutLeft", -2875);
-		set(markerID, "MkrReadoutRight", -1268);
-		set(markerID, "MkrReadoutBottom", 920);
-		set(markerID, "MkrReadoutTop", 375);
+		set(markerID, "MkrReadoutLeft", -3250);
+		set(markerID, "MkrReadoutRight", -1647);
+		set(markerID, "MkrReadoutBottom", 958);
+		set(markerID, "MkrReadoutTop", 250);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
 		set(markerID, "MkrIndicatorType", 0);
@@ -1958,9 +1958,9 @@ markerID = get_new(traceID, "MarkerNew", "m4", "2412000000.000000000000000000000
 ddWinId = get_new(ddsId, "Window", 156, 56, 1536, 864);
 	set(ddWinId, "Object", ddoId);
 	set(ddWinId, "CurrentPage", 388810881);
-	set(ddWinId, "PageViewRect_388810881", list(-11120, 4253, 4181, -4033));
+	set(ddWinId, "PageViewRect_388810881", list(-10755, 5230, 6569, -3553));
 	set(ddWinId, "Frame", list(156, 56, 1536, 864));
-	set(ddWinId, "Maximized", FALSE);
+	set(ddWinId, "Maximized", TRUE);
 	set(ddWinId, "ForegroundColor", 0);
 	set(ddWinId, "BackgroundColor", 8);
 	set(ddWinId, "WindowPageOrder", list("page 1"));
