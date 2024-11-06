@@ -1,12 +1,12 @@
 
-hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
-    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+hpeesofsim (*) 570.shp Jul 19 2022, MINT version 5
+    (64-bit linux built: Tue Jul 19, 2022 14:06:28 +0000)
 
 
-***** Simulation started at Thu Oct 24 14:15:03 2024
-      Running on host: "Heimdall-Laptop"
-      In Directory: "C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\ads\project_system_wrk\data"
-      Process ID: 1860
+***** Simulation started at Wed, Nov 06 2024 17:10:33 +0100
+      Running on host: "d283-pc5.ensea.fr"
+      In Directory: "/users/jerefleu12/Documents/git/RF-Frequency-Transposition-ENSEA-Bares/ads/project_system_wrk/data"
+      User: "jerefleu", Process ID: 20448
 
 Warning detected by hpeesofsim during netlist parsing.
     Unrecognizable scale factor `dBm' ignored
@@ -20,17 +20,14 @@ Warning detected by hpeesofsim during netlist flattening.
 Warning detected by hpeesofsim during netlist flattening.
     Touchstone file parser warning:
     Line - 117, Column - 46 : expected end-of-line termination before end-of-file
-    File: `C:/Users/jerem/Documents/git/RF-Frequency-Transposition-ENSEA-Bares/Sparam_source/GRF2070_2080_5V_70mA_25C.s2p'.
-
-
-3 spare nodes and 2 spare devices are removed.
-The details can be found in file 'C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\ads\project_system_wrk\data\test_board_full_module_real_data\spare_removal.txt'.
+    File: `/users/jerefleu12/Documents/git/RF-Frequency-Transposition-ENSEA-Bares/Sparam_source/GRF2070_2080_5V_70mA_25C.s2p'.
 
 Warning detected by hpeesofsim during circuit set up.
     Capacitor `X1.X3.VCO1.CMP1' C=1 is unusually large.
 
 Warning detected by hpeesofsim in topology check during circuit set up.
-    Topology correction added to 10 branches
+    Number of nodes with only one device attached (topology corrected): 3
+    Number of nodes with no DC path to ground (topology corrected): 1
 
 
 HB HB1[1] <project_system_lib:test_board_full_module_real:schematic>
@@ -47,10 +44,36 @@ Message from hpeesofsim during DC analysis `HB1'.
     Required filter order is calculated to be 5 for component
                  `X1.X4.BPF1.CMP1'
 
+    Matrix is singular (detected at node or branch `X1.X6.N__0').
+    Matrix is singular (detected at node or branch `X1.X6.N__0').
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+    Matrix is singular (detected at node or branch `X1.X3.X1.R2.i').
+Adding gmin to branches
+Warning detected by hpeesofsim during DC analysis `HB1'.
+    Circuit converged after a virtual resistance of 1 TOhms 
+    was added between each node and ground, and a virtual 
+    resistance of 1 pOhms was inserted in each current branch. 
+    Possible causes include floating nodes or missing ground.
+
     Number of tones:   1.
     Number of frequencies:   4.
     Number of time samples:  8.
-    Number of HB equations (problem size): 637.
+    Number of HB equations (problem size): 693.
     Auto mode: on.
     Convergence mode: Auto.
     Linear solver: direct.
@@ -66,12 +89,17 @@ Warning detected by hpeesofsim during AC Analysis `HB1'.
 Warning detected by hpeesofsim during AC Analysis `HB1'.
     Linear S_Port `X1.X1.CIR1.CMP1' is non-passive.
 
+Warning detected by hpeesofsim during AC Analysis `HB1'.
+    A virtual resistance of 1 TOhms was added between each node and ground,
+    and a virtual resistance of 1 pOhms was inserted in each current branch,
+    during AC/SP analysis at 543 MHz.
+
 ------------------------------------------------------------------------------
 Newton solver:					
 Iter	KCL residual	Damp %	Sol update
 ------------------------------------------------------------------------------
 0.0*	1.45641 A   	100.0             
-1.0 	170.38 fA   	100.0	543.945 fV   
+1.0 	171.195 fA  	100.0	543.945 fV   
 An HB truncation error may be present.
 o The HB truncation error is due to using a finite order 
   (number of harmonics) in the representation of the
@@ -86,7 +114,7 @@ o Number of waveforms violating the HB truncation error check:
 o Estimated max HB truncation error: 4.204e-06 @ waveform X1.X3.Vfiltered_VCO .
 o The maximal HB truncation error estimate is greater than the 
   achieved tolerance of 1.155e-06 for this waveform.
-o A time-domain plot of the N__4 waveform may show the error as 
+o A time-domain plot of the N__0 waveform may show the error as 
   Gibbs ripples.
 o To reduce the error, increase the order (number of harmonics) 
   and re-simulate.
@@ -95,7 +123,7 @@ HB HB1[1] <project_system_lib:test_board_full_module_real:schematic>
     Number of tones:   2.
     Number of frequencies:   19.
     Number of time samples:  64.
-    Number of HB equations (problem size): 3367.
+    Number of HB equations (problem size): 3663.
     Auto mode: on.
     Convergence mode: Auto.
     Linear solver: direct.
@@ -107,14 +135,14 @@ Iter	KCL residual	Damp %	Sol update
 1.0 	308.24 mA   	100.0	11.9269 V    
 1.1 	71.4853 mA  	100.0	271.872 mV   
 1.2 	215.242 uA  	100.0	2.91763 mV   
-1.3 	276.547 nA  	100.0	3.87487 uV   
-1.4 	2.09646 fA  	100.0	33.2535 fV   
+1.3 	276.548 nA  	100.0	3.87487 uV   
+1.4 	4.63373 fA  	100.0	35.6151 fV   
 
 HB HB1[1] <project_system_lib:test_board_full_module_real:schematic>
     Number of tones:   3.
     Number of frequencies:   62.
     Number of time samples:  512.
-    Number of HB equations (problem size): 11193.
+    Number of HB equations (problem size): 12177.
     Auto mode: on.
     Convergence mode: Auto.
     Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
@@ -125,9 +153,16 @@ Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
 0 	7.96218 mA  	100.0             
-1 	43.6836 pA  	100.0	2.33039 V   	  3	7.439e-15   
-2 	4.42278 fA  	100.0	617.477 pV  	  3	5.276e-06   
+1 	43.688 pA   	100.0	2.33039 V   	  3	2.880e-15   
+2 	6.09524 fA  	100.0	617.476 pV  	  3	3.024e-06   
 
 Resource usage:
-  Total stopwatch time     =     0.99 seconds.
+    User time                 =     1.11 seconds.
+    System time               =     0.85 seconds.
+    Total CPU time            =     1.97 seconds.
+    Simulation stopwatch time =     0.20 seconds.
+    Total stopwatch time      =     1.34 seconds.
+
+    Physical memory used: 103 MBytes.
+    Incremental virtual memory (data only) used:  40.1 MBytes.
 

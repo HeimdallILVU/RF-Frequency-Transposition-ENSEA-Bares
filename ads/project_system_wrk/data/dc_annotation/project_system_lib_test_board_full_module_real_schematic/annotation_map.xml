@@ -1,12 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<annotation_files Time="jeu. oct. 24 14:15:04 2024" Version="1.0" Simulator="hpeesofsim">
+<?xml version="1.0" encoding="UTF-8"?>
+<annotation_files Simulator="hpeesofsim" Version="1.0" Time="Wed Nov 6 17:10:34 2024">
  <File name="annotation_1.xml">
-  <Controller name="HB1_(DC)">
-   <P>freq: 0.0000000000000000e+00</P>
-  </Controller>
- </File>
- <File name="annotation_2.xml">
-  <Controller name="HB1_(HB)">
+  <Controller name="HB1">
    <P>freq: 0.0000000000000000e+00</P>
   </Controller>
  </File>
