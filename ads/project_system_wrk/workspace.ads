@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="73" Version="100">
+<ADSWorkspace Revision="74" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -213,5 +213,6 @@
         <Data_Files Name="test_board_AFS14A72_data\logFile.txt" />
         <Data_Display Name="test_board_AFS14A72.dds" />
         <Data_Display Name="test_board_full_module_real.dds" />
+        <Preferences Name="ads_tlines_lay.prf" />
     </Workspace>
 </ADSWorkspace>
