@@ -1,96 +1,46 @@
-; Top Design: "project_system_lib:test_board_Dual_Mixer_with_VCO:schematic"
+; Top Design: "project_system_lib:test_LNA_noise_opt:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_Dual_Mixer_with_VCO:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_LNA_noise_opt:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: Mixer - LT5560EDD
+; Cell Name: LNA_GRF2070
 ; View Name: schematic
-define "Mixer#20-#20LT5560EDD" ( EN  Gnd  "IN+"  "IN-"  "LO+"  "LO-"  "OUT+"  "OUT-"  Vcc ) 
+define LNA_GRF2070 ( EN  Gnd  NC  RFin  RFout ) 
 ;parameters 
-Mixer:MIX7  "IN-" "OUT+" "LO+" SideBand=0 ImageRej=-15 dB LO_Rej1=-50 dB LO_Rej2=-40 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 PminLO=-10dBm Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
-R:R1  "IN+" N__6 R=0 Ohm Noise=yes 
-R:R2  N__6 "OUT-" R=0 Ohm Noise=yes 
-R:R3  "LO-" N__6 R=0 Ohm Noise=yes 
-R:R4  EN N__6 R=1 kOhm Noise=yes 
-R:R5  N__6 Vcc R=1 kOhm Noise=yes 
-R:R6  N__6 Gnd R=0 Ohm Noise=yes 
-end "Mixer#20-#20LT5560EDD"
+R:R1  EN Gnd R=1 kOhm Noise=yes 
+#uselib "ckt" , "S2P"
+S2P:SNP1  RFin RFout Gnd File="C:\Users\benji\Documents\GitHub\system_project_ENSEA\Sparam_source\GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+end LNA_GRF2070
 
 ; Library Name: project_system_lib
-; Cell Name: Dual_Mixer_with_VCO
+; Cell Name: LNA_GRF2070_with_polar
 ; View Name: schematic
-define Dual_Mixer_with_VCO ( Gnd  Vifin  Vifout  Vrfin  Vrfout  VCO_Ref  Vcc ) 
+define LNA_GRF2070_with_polar ( EN  Gnd  RFin  RFout  Vdd ) 
 ;parameters 
-#uselib "sml" , "VCO"
-VCO:VCO1  VCO_Ref Vvco Kv=720 kHz Freq=543 MHz P=-j*dbmtow(0.01) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
-L:L9  Vfiltered_lo N__29 L=56 nH Noise=yes  
-C:C11  N__29 N__25 C=180 fF 
-C:C4  Gnd N__25 C=33 pF 
-#uselib "ckt" , "Vf_Square"
-Vf_Square:SRC1  Vcrystal Gnd Vpeak=2.55 V Vdc=1.45 V Freq=1 GHz Rise=0.4 nsec Fall=0.4 nsec Delay=0 nsec Weight=0 Harmonics=16 SaveCurrent=1 
-C:C2  N__17 Vvco C=1.3 pF 
-L:L2  Vfiltered_VCO N__17 L=56 nH Noise=yes  
-L:L3  Vfiltered_VCO Gnd L=2.4 nH Noise=yes  
-C:C3  Gnd Vfiltered_VCO C=33 pF 
-C:C6  N__20 Vlo C=180 fF 
-L:L4  N__25 Gnd L=300 pH Noise=yes  
-L:L5  N__25 N__20 L=56 nH Noise=yes  
-C:C7  Gnd Vfiltered_crystal C=82 pF 
-C:C8  N__5 Vcrystal C=120 fF 
-L:L7  Vfiltered_crystal Gnd L=300 pH Noise=yes  
-L:L8  Vfiltered_crystal N__5 L=220 nH Noise=yes  
-"Mixer#20-#20LT5560EDD":X1  Vcc Gnd Gnd Vfiltered_VCO Vfiltered_crystal Gnd Vlo Gnd Vcc 
-C:C9  Gnd Vcc C=1 uF 
-C:C10  Gnd Vcc C=1 nF 
-"Mixer#20-#20LT5560EDD":X2  Vcc N__39 Gnd Vrfin Vfiltered_lo Gnd Vifout Gnd Gnd 
-"Mixer#20-#20LT5560EDD":X3  Vcc N__44 Gnd Vifin Vfiltered_lo Gnd Vrfout Gnd Gnd 
-C:C12  Vcc Gnd C=1 uF 
-C:C13  Vcc Gnd C=1 nF 
-C:C14  Vcc Gnd C=1 uF 
-C:C15  Vcc Gnd C=1 nF 
-end Dual_Mixer_with_VCO
+C:C2  Vdd Gnd C=0.1 uF 
+L:L1  N__7 Vdd L=22 nH Noise=yes  
+C:C1  RFin N__14 C=47 pF 
+LNA_GRF2070:X1  EN Gnd N__0 N__14 N__7 
+C:C3  N__7 RFout C=4.7 pF 
+end LNA_GRF2070_with_polar
 
-Dual_Mixer_with_VCO:X1  0 Vin2 Vout Vin Vout2 0 N__6 
-Port:PORT1  Vin 0 Num=1  Z=50 Ohm  Freq[1]=2412 MHz    P[1]=polar(dbmtow(10),0) Noise=yes Pac=polar(dbmtow(0),0) 
-R:R1  Vout 0 R=50 Ohm Noise=yes 
+V_Source:SRC1  N__4 0 Type="V_DC" Vdc=5 V SaveCurrent=1 
+Port:TermG1  N__6 0 Num=1 Z=53 Ohm tune{ 2 Ohm to 75 Ohm by 0.5 Ohm } Noise=yes Temp=25 
+Port:TermG2  N__0 0 Num=2 Z=50 Ohm Noise=yes Temp=25 
+LNA_GRF2070_with_polar:X1  N__4 0 N__6 N__0 N__4 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 NoiseInputPort=1 NoiseOutputPort=2 SPSS_WSP=yes \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-HB:Env1 Freq[1]=0.543 GHz \
-Freq[2]=1.000 GHz \
-Freq[3]=2.412 GHz \
- Order[1]=3 \
-Order[2]=3 \
-Order[3]=3 \
-  MaxOrder=3 StatusLevel=1 FundOversample=2 Restart=no UseGear=yes \
- EnvIntegOrder=2 EnvBandwidth=1 EnvWarnPoorFit=yes EnvUsePoorFit=yes SweepVar="time" \
- DevOpPtLevel=0 EnvFitDisableCache=no SweepPlan="Env1_stim" OutputPlan="Env1_Output"
+SweepPlan: SP1_stim Start=500 MHz Stop=1.2 GHz Step=100 kHz 
 
-OutputPlan:Env1_Output \
-       Type="Output" \
-       UseNodeNestLevel=yes \
-       NodeNestLevel=2 \
-       UseEquationNestLevel=yes \
-       EquationNestLevel=2 \
-       UseSavedEquationNestLevel=yes \
-       SavedEquationNestLevel=2 \
-       UseDeviceCurrentNestLevel=no \
-       DeviceCurrentNestLevel=0 \
-       DeviceCurrentDeviceType="All" \
-       DeviceCurrentSymSyntax=yes \
-       UseCurrentNestLevel=yes \
-       CurrentNestLevel=999 \
-       UseDeviceVoltageNestLevel=no \
-       DeviceVoltageNestLevel=0 \
-       DeviceVoltageDeviceType="All" 
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
 
-SweepPlan:Env1_stim Stop=100 nsec Step=0.1 nsec
-
-Tran:Env1_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
- Freq[1]=0.543 GHz \
- Order[1]=3 \
- OutputPlan="Env1_Output"
-
-Component:tahb_Env1 Module="ATAHB" Type="ModelExtractor" Tran_Analysis="Env1_tran" HB_Analysis="Env1"
-
-Port:PORT2  Vin2 0 Num=2  Z=50 Ohm  Freq[1]=869 MHz    P[1]=polar(dbmtow(10),0) Noise=yes Pac=polar(dbmtow(0),0) 
-R:R2  Vout2 0 R=50 Ohm Noise=yes 
-V_Source:SRC1  N__6 0 Type="V_DC" Vdc=3.3 V SaveCurrent=1 
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+aele Zopt1=zopt(Sopt,PortZ1);
+aele Zin1=zin(S11,PortZ1);
