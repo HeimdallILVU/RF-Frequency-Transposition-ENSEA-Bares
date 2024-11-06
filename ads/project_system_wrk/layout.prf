@@ -39,7 +39,6 @@ portColor 5
 backgroundColor 0
 foregroundColor 41
 globalArcResolution 5.000000
-pcbViaArcResolution 5.000000
 selectFilter 9727
 selectMode 1
 shapeSelectMode 2
@@ -47,12 +46,12 @@ selectBoxSize 10.000000
 selectPointSize 8.000000
 entryMode 0
 rotationIncrement 90.000000
-gridDisplayX 1
-gridDisplayY 1
+gridDisplayX 2
+gridDisplayY 2
 gridDisplayOn 1
 gridDisplaySameXY 1
-majorGridDisplayX 100
-majorGridDisplayY 100
+majorGridDisplayX 5
+majorGridDisplayY 5
 majorGridDisplayOn 1
 gridDisplayMode 0
 gridSnapOn 1
