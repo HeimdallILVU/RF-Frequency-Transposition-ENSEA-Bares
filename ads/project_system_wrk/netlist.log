@@ -53,7 +53,7 @@ Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=
 end "Circulateur#20OUT_v2"
 
 ; Library Name: project_system_lib
-; Cell Name: Dual_Mixer_with_VCO
+; Cell Name: SYMB_Filtre_SF160868M4UU01
 ; View Name: schematic
 define LNA_GRF2070_with_polar ( EN  Gnd  RFin  RFout  Vdd ) 
 ;parameters 
