@@ -110,6 +110,18 @@
             <Cell Name="project_system_lib:Frequency_Transposer_Up_Down_no_circulator" />
         </Folder>
         <Folder Name="Component_Models">
+                    <Folder Name="Passif_component">
+                <Cell Name="project_system_lib:Rob_81-GJM1555C1HR12WB1D" />
+                <Cell Name="project_system_lib:Rob_GRT0335C1ER18WA02D" />
+                <Cell Name="project_system_lib:Rob_06032U1R3BAT2A" />
+                <Cell Name="project_system_lib:Rob_CBR04C330F5GAC" />
+                <Cell Name="project_system_lib:Rob_CBR06C820F5GAC" />
+                <Cell Name="project_system_lib:Rob_AISC-Q0402-2N4K-T" />
+                <Cell Name="project_system_lib:Rob_885382207001" />
+                <Cell Name="project_system_lib:Rob_MLJ1005HXG56NETD0B" />
+                <Cell Name="project_system_lib:Rob_LQW15CAR22K00D" />
+                <Cell Name="project_system_lib:Rob_MLG1005S0N3BTD25" />
+            </Folder>
             <Cell Name="project_system_lib:Work_low_cost_VCO" />
             <Data_Display Name="Work_low_cost_VCO.dds" />
             <Cell Name="project_system_lib:SYMB_Filtre_AFS869S3" />
