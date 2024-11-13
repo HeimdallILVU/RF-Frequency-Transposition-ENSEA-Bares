@@ -15,7 +15,7 @@ instTextPoint 12
 instTextRows 15
 instTextAddOptionalParams 0
 instTextPrec 2
-wireLabelFontName Arial For CAE
+wireLabelFontName Roboto
 wireLabelPoint 12
 wireLabelColor 37
 fixedInstHighlightColor 2
@@ -26,7 +26,7 @@ scaleX 1.000000
 scaleY 1.000000
 toArcRadius 3.000000
 miterVertexLength 10.000000
-portOrientation 0.000000
+portOrientation 10000.000000
 plottingDepth 10
 bboxColor 3
 selectColor 99
@@ -145,7 +145,7 @@ newRouteAroundInstSym 1
 onscreenCoordMode 2
 editInPlaceBoxColor 3
 dseFixAllComponents 0
-dseKeepNets 0
+dseKeepNets 1
 instTextTuneFormat 1
 instTextOptFormat 1
 instTextStatFormat 1

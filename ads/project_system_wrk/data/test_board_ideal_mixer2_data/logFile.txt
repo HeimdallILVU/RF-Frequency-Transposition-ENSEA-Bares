@@ -1,0 +1,119 @@
+
+hpeesofsim (*) 610.shp Aug 20 2024, MINT version 5
+    (64-bit windows built: Tue Aug 20, 2024 21:40:41 +0000)
+
+
+***** Simulation started at Wed Oct 23 22:05:18 2024
+      Running on host: "Heimdall-Laptop"
+      In Directory: "C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\ads\project_system_wrk\data"
+      Process ID: 25068
+
+Warning detected by hpeesofsim during circuit set up.
+    Capacitor `VCO1.CMP1' C=1 is unusually large.
+
+
+HB HB1[1] <project_system_lib:test_board_ideal_mixer2:schematic>
+    Number of tones:   1.
+    Number of frequencies:   6.
+    Number of time samples:  16.
+    Number of HB equations (problem size): 110.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	6.46177 mA  	100.0             
+1.0 	2.04679 mA  	100.0	2.04679 mV   
+1.1 	3.05101 aA  	100.0	10.9379 aV   
+An HB truncation error may be present.
+o The HB truncation error is due to using a finite order 
+  (number of harmonics) in the representation of the
+  circuit signals.
+
+Waveform                Trunc error             Tolerance
+---------------------------------------------------------
+Vosc                    6.152e-05       >       1.160e-06
+Vin                     1.094e-05       >       1.028e-06
+MIX1.iLO                1.230e-06       >       1.003e-06
+
+o Number of waveforms violating the HB truncation error check:
+        3 out of 7 waveforms.
+o Estimated max HB truncation error: 6.152e-05 @ waveform Vosc .
+o The maximal HB truncation error estimate is greater than the 
+  achieved tolerance of 1.160e-06 for this waveform.
+o To reduce the error, increase the order (number of harmonics) 
+  and re-simulate.
+
+HB HB1[1] <project_system_lib:test_board_ideal_mixer2:schematic>
+    Number of tones:   2.
+    Number of frequencies:   55.
+    Number of time samples:  128.
+    Number of HB equations (problem size): 1090.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
+    Preconditioner: DCP.
+    The general solver is used for HB Krylov preconditioning.
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	19.3341 mA  	100.0             
+1 	95.1103 mA  	100.0	409.026 mV  	  2	4.661e-16   
+2 	45.7798 mA  	100.0	323.073 mV  	  2	3.233e-16   
+3 	63.2068 aA  	100.0	323.712 mV  	  1	3.141e-16   
+4 	49.4677 aA  	100.0	381.274 aV  	  3	3.610e-16   
+
+HB HB1[1] <project_system_lib:test_board_ideal_mixer2:schematic>
+    Number of tones:   3.
+    Number of frequencies:   360.
+    Number of time samples:  2048.
+    Number of HB equations (problem size): 7190.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
+    Preconditioner: DCP.
+    The general solver is used for HB Krylov preconditioning.
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	12.7956 mA  	100.0             
+1 	131.058 aA  	100.0	704.308 mV  	  2	5.109e-16   
+2 	109.079 aA  	100.0	993.991 aV  	  2	2.581e-15   
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 0 Hz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 195 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 390 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 479 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 674 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 869 MHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.064 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.153 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.259 GHz.
+
+Warning detected by hpeesofsim during HB analysis `HB1'.
+     More than one mixing term has landed on frequency 1.348 GHz.
+
+
+Resource usage:
+  Total stopwatch time     =     0.94 seconds.
+
