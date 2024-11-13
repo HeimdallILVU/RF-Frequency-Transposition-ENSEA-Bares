@@ -2,7 +2,7 @@ pathBend 5
 pathMiterPercent 30.000000
 pathEndCap 2
 pathLayerName default
-textFontName Arial For CAE
+textFontName Roboto
 textPoint 12
 textJustification 9
 textAngle 0.000000
@@ -10,7 +10,7 @@ textAbsolute 0
 instNameLayer 1
 instIDLayer 1
 instParam1Layer 1
-instTextFontName Arial For CAE
+instTextFontName Roboto
 instTextPoint 12
 instTextRows 15
 instTextAddOptionalParams 0

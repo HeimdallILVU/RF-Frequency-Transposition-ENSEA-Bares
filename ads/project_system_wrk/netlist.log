@@ -1,16 +1,144 @@
-; Top Design: "project_system_lib:test_board_full_module_real:schematic"
+; Top Design: "project_system_lib:test_board_full_module_real_comp:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_full_module_real:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="project_system_lib:test_board_full_module_real_comp:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 ; Library Name: project_system_lib
-; Cell Name: LNA_GRF2070
+; Cell Name: 581-600F100FT250XTV
 ; View Name: schematic
-define LNA_GRF2070 ( EN  Gnd  NC  RFin  RFout ) 
+define "581-600F100FT250XTV" ( P1  P2 ) 
 ;parameters 
-R:R1  EN Gnd R=1 kOhm Noise=yes 
-#uselib "ckt" , "S2P"
-S2P:SNP1  RFin RFout Gnd File="/users/jerefleu12/Documents/git/RF-Frequency-Transposition-ENSEA-Bares/Sparam_source/GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
-end LNA_GRF2070
+C:C1  N__0 P2 C=10 pF 
+R:R1  P1 N__0 R=0.06 Ohm Noise=yes 
+end "581-600F100FT250XTV"
+
+; Library Name: project_system_lib
+; Cell Name: 700-MAX2609EUTT
+; View Name: schematic
+define "700-MAX2609EUTT" ( GND  GND__IND  "OUT+"  "GND__OUT-"  TUNE  Vcc ) 
+;parameters 
+#uselib "sml" , "VCO"
+VCO:VCO1  TUNE "OUT+" Kv=60 MHz Freq=519 MHz P=-j*dbmtow(0.01) Rout=50 Ohm Delay=timestep Harmonics=list(-0.01, 0.002) 
+R:R1  Vcc GND R=10 kOhm Noise=yes 
+Short:PinShort__IND  GND__IND GND Mode=0 SaveCurrent=no
+Short:"PinShort__OUT-"  "GND__OUT-" GND Mode=0 SaveCurrent=no
+end "700-MAX2609EUTT"
+
+; Library Name: project_system_lib
+; Cell Name: 972-LP736A00.000000I
+; View Name: schematic
+define "972-LP736A00\.000000I" ( GND  NC  OUT  OUT2  Vdd ) 
+;parameters 
+#uselib "ckt" , "Vf_Square"
+Vf_Square:SRC1  OUT2 GND Vpeak=2.55 V Vdc=1.45 V Freq=1 GHz Rise=0.4 nsec Fall=0.4 nsec Delay=0 nsec Weight=0 Harmonics=16 SaveCurrent=1 
+#uselib "ckt" , "Vf_Square"
+Vf_Square:SRC2  OUT GND Vpeak=2.55 V Vdc=1.45 V Freq=1 GHz Rise=0.4 nsec Fall=0.4 nsec Delay=0.5 nsec Weight=0 Harmonics=16 SaveCurrent=1 
+R:R1  Vdd GND R=10 kOhm Noise=yes 
+end "972-LP736A00\.000000I"
+
+; Library Name: project_system_lib
+; Cell Name: 994-0807SQ-11NGLC
+; View Name: schematic
+define "994-0807SQ-11NGLC" ( P1  P2 ) 
+;parameters 
+L:L1  N__1 P2 L=11.3 nH Noise=yes  
+R:R1  P1 N__1 R=0.0063 Ohm Noise=yes 
+end "994-0807SQ-11NGLC"
+
+; Library Name: project_system_lib
+; Cell Name: 581-06032U1R3BAT2A
+; View Name: schematic
+define "581-06032U1R3BAT2A" ( P1  P2 ) 
+;parameters 
+R:R1  P1 N__1 R=0.18 Ohm Noise=yes 
+C:C1  N__1 P2 C=1.3 pF 
+end "581-06032U1R3BAT2A"
+
+; Library Name: project_system_lib
+; Cell Name: 710-885382207001
+; View Name: schematic
+define "710-885382207001" ( P1  P2 ) 
+;parameters 
+C:C1  P1 P2 C=1 uF 
+end "710-885382207001"
+
+; Library Name: project_system_lib
+; Cell Name: 80-CBR04C330F5GAC
+; View Name: schematic
+define "80-CBR04C330F5GAC" ( P1  P2 ) 
+;parameters 
+R:R1  P1 N__1 R=0.25 Ohm Noise=yes 
+C:C1  N__1 P2 C=33 pF 
+end "80-CBR04C330F5GAC"
+
+; Library Name: project_system_lib
+; Cell Name: 80-CBR06C820F5GAC
+; View Name: schematic
+define "80-CBR06C820F5GAC" ( P1  P2 ) 
+;parameters 
+R:R1  P1 N__1 R=0.2 Ohm Noise=yes 
+C:C1  N__1 P2 C=82 pF 
+end "80-CBR06C820F5GAC"
+
+; Library Name: project_system_lib
+; Cell Name: 81-GJM1555C1HR12WB1D
+; View Name: schematic
+define "81-GJM1555C1HR12WB1D" ( P1  P2 ) 
+;parameters 
+C:C1  P1 P2 C=0.12 pF 
+end "81-GJM1555C1HR12WB1D"
+
+; Library Name: project_system_lib
+; Cell Name: 81-GRT0335C1ER18WA2D
+; View Name: schematic
+define "81-GRT0335C1ER18WA2D" ( P1  P2 ) 
+;parameters 
+C:C1  P1 P2 C=0.18 pF 
+end "81-GRT0335C1ER18WA2D"
+
+; Library Name: project_system_lib
+; Cell Name: 81-LQW15CAR22K00D
+; View Name: schematic
+define "81-LQW15CAR22K00D" ( P1  P2 ) 
+;parameters 
+R:R1  P1 N__1 R=0.290 Ohm Noise=yes 
+L:L1  N__1 P2 L=220 nH R=1.1 Ohm Noise=yes  
+end "81-LQW15CAR22K00D"
+
+; Library Name: project_system_lib
+; Cell Name: 810-MLG1005S0N3BTD25_1.524GHz
+; View Name: schematic
+define "810-MLG1005S0N3BTD25_1\.524GHz" ( P1  P2 ) 
+;parameters 
+R:R1  P1 N__2 R=50 mOhm Noise=yes 
+L:L1  N__2 P2 L=300 pH R=3.029 Ohm Noise=yes  
+end "810-MLG1005S0N3BTD25_1\.524GHz"
+
+; Library Name: project_system_lib
+; Cell Name: 810-MLG1005S0N3BTD25_542MHz
+; View Name: schematic
+define "810-MLG1005S0N3BTD25_542MHz" ( P1  P2 ) 
+;parameters 
+R:R1  N__0 P2 R=50 mOhm Noise=yes 
+L:L1  P1 N__0 L=300 pH R=1.108 Ohm Noise=yes  
+end "810-MLG1005S0N3BTD25_542MHz"
+
+; Library Name: project_system_lib
+; Cell Name: 815-AISC-Q0402-2N4KT
+; View Name: schematic
+define "815-AISC-Q0402-2N4KT" ( P1  P2 ) 
+;parameters 
+R:R1  P1 N__1 R=0.070 Ohm Noise=yes 
+L:L1  N__1 P2 L=2.4 nH Noise=yes  
+end "815-AISC-Q0402-2N4KT"
+
+; Library Name: project_system_lib
+; Cell Name: Crystal LP736A00 with filter
+; View Name: schematic
+define "Crystal#20LP736A00#20with#20filter" ( GND  OUT  OUT2  Vdd ) 
+;parameters 
+"972-LP736A00\.000000I":X1  GND N__3 OUT OUT2 Vdd 
+"581-600F100FT250XTV":X2  Vdd GND 
+end "Crystal#20LP736A00#20with#20filter"
 
 ; Library Name: project_system_lib
 ; Cell Name: LNA_GRF2070
@@ -19,8 +147,31 @@ define LNA_GRF2070 ( EN  Gnd  NC  RFin  RFout )
 ;parameters 
 R:R1  EN Gnd R=1 kOhm Noise=yes 
 #uselib "ckt" , "S2P"
-S2P:SNP1  RFin RFout Gnd File="C:\Users\benji\Documents\GitHub\system_project_ENSEA\Sparam_source\GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+S2P:SNP1  RFin RFout Gnd File="C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\Sparam_source\GRF2070_2080_5V_70mA_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
 end LNA_GRF2070
+
+; Library Name: project_system_lib
+; Cell Name: MAX2609 with resonating inductor
+; View Name: schematic
+define "MAX2609#20with#20resonating#20inductor" ( GND  "OUT+"  "OUT-"  TUNE  Vcc ) 
+;parameters 
+"700-MAX2609EUTT":X1  GND N__7 "OUT+" "OUT-" TUNE Vcc 
+"994-0807SQ-11NGLC":X2  N__7 GND 
+end "MAX2609#20with#20resonating#20inductor"
+
+; Library Name: project_system_lib
+; Cell Name: Mixer - LT5560EDD
+; View Name: schematic
+define "Mixer#20-#20LT5560EDD" ( EN  Gnd  "IN+"  "IN-"  "LO+"  "LO-"  "OUT+"  "OUT-"  Vcc ) 
+;parameters 
+Mixer:MIX7  "IN-" "OUT+" "LO+" SideBand=0 ImageRej=-15 dB LO_Rej1=-50 dB LO_Rej2=-40 dB RF_Rej=-15 dB ConvGain=dbpolar(2.5,0) S11=polar(0,0) S22=polar(0,180) S33=0 PminLO=-10dBm Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm GainCompType=0 ReferToInput=0 GainCompSat=5.0 dB GainComp=1.0 dB 
+R:R1  "IN+" N__6 R=0 Ohm Noise=yes 
+R:R2  N__6 "OUT-" R=0 Ohm Noise=yes 
+R:R3  "LO-" N__6 R=0 Ohm Noise=yes 
+R:R4  EN N__6 R=1 kOhm Noise=yes 
+R:R5  N__6 Vcc R=1 kOhm Noise=yes 
+R:R6  N__6 Gnd R=0 Ohm Noise=yes 
+end "Mixer#20-#20LT5560EDD"
 
 ; Library Name: project_system_lib
 ; Cell Name: BGA2800-115
@@ -28,92 +179,92 @@ end LNA_GRF2070
 define "BGA2800-115" ( Gnd  RFin  RFout  Vcc ) 
 ;parameters 
 #uselib "ckt" , "S2P"
-S2P:SNP1  RFin RFout Gnd File="/users/jerefleu12/Documents/git/RF-Frequency-Transposition-ENSEA-Bares/Sparam_source/BGA2800_3p3V_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+S2P:SNP1  RFin RFout Gnd File="C:\Users\jerem\Documents\git\RF-Frequency-Transposition-ENSEA-Bares\Sparam_source\BGA2800_3p3V_25C.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
 R:R1  Vcc Gnd R=1 kOhm Noise=yes 
 R:R2  Gnd Gnd R=0 Ohm Noise=yes 
 R:R3  Gnd Gnd R=0 Ohm Noise=yes 
 end "BGA2800-115"
 
 ; Library Name: project_system_lib
-; Cell Name: Circulateur IN
+; Cell Name: Dual_Mixer_with_VCO_real
 ; View Name: schematic
-define "Circulateur#20IN" ( P1  P2  P3 ) 
+define Dual_Mixer_with_VCO_real ( Gnd  Vifin  Vifout  Vrfin  Vrfout  VCO_Ref  Vcc ) 
 ;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=200 dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-end "Circulateur#20IN"
-
-; Library Name: project_system_lib
-; Cell Name: Circulateur OUT_v2
-; View Name: schematic
-define "Circulateur#20OUT_v2" ( P1  P2  P3 ) 
-;parameters 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  P1 P2 P3 Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=200 dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-end "Circulateur#20OUT_v2"
-
-; Library Name: project_system_lib
-; Cell Name: SYMB_Filtre_SF160868M4UU01
-; View Name: schematic
-define LNA_GRF2070_with_polar ( EN  Gnd  RFin  RFout  Vdd ) 
-;parameters 
-C:C2  Vdd Gnd C=0.1 uF 
-L:L1  N__7 Vdd L=22 nH Noise=yes  
-C:C1  RFin N__14 C=47 pF 
-LNA_GRF2070:X1  EN Gnd N__0 N__14 N__7 
-C:C3  N__7 RFout C=4.7 pF 
-end LNA_GRF2070_with_polar
+"Crystal#20LP736A00#20with#20filter":X11  Gnd Vcrystal N__41 Vcc 
+L:L9  Vfiltered_lo N__20 L=56 nH Noise=yes  
+"810-MLG1005S0N3BTD25_1\.524GHz":X16  Gnd N__31 
+"80-CBR04C330F5GAC":X5  Gnd Vfiltered_VCO 
+L:L2  Vfiltered_VCO N__38 L=56 nH Noise=yes  
+"810-MLG1005S0N3BTD25_542MHz":X7  Vfiltered_crystal Gnd 
+"815-AISC-Q0402-2N4KT":X6  Gnd Vfiltered_VCO 
+"581-06032U1R3BAT2A":X4  N__34 N__38 
+"80-CBR04C330F5GAC":X15  Gnd N__31 
+"81-GRT0335C1ER18WA2D":X17  N__31 N__20 
+L:L5  N__31 N__5 L=56 nH Noise=yes  
+"81-LQW15CAR22K00D":X9  Vfiltered_crystal N__40 
+"MAX2609#20with#20resonating#20inductor":X12  Gnd N__34 Gnd N__37 Vcc 
+"80-CBR06C820F5GAC":X8  Gnd Vfiltered_crystal 
+"81-GJM1555C1HR12WB1D":X10  N__40 Vcrystal 
+"710-885382207001":X13  Vcc Gnd 
+"Mixer#20-#20LT5560EDD":X1  Vcc Gnd Gnd Vfiltered_VCO Vfiltered_crystal Gnd Vlo Gnd Vcc 
+"81-GRT0335C1ER18WA2D":X14  Vlo N__5 
+C:C10  Gnd Vcc C=1 nF 
+"Mixer#20-#20LT5560EDD":X2  Vcc N__39 Gnd Vrfin Vfiltered_lo Gnd Vifout Gnd Gnd 
+"Mixer#20-#20LT5560EDD":X3  Vcc N__44 Gnd Vifin Vfiltered_lo Gnd Vrfout Gnd Gnd 
+"710-885382207001":X18  Vcc Gnd 
+C:C13  Vcc Gnd C=1 nF 
+"710-885382207001":X19  Gnd Vcc 
+C:C15  Vcc Gnd C=1 nF 
+R:R1  VCO_Ref N__37 R=13.3 kOhm Noise=yes 
+R:R2  N__37 Gnd R=2 kOhm Noise=yes 
+end Dual_Mixer_with_VCO_real
 
 ; Library Name: project_system_lib
 ; Cell Name: LNA_GRF2070_with_polar
 ; View Name: schematic
 define LNA_GRF2070_with_polar ( EN  Gnd  RFin  RFout  Vdd ) 
 ;parameters 
-C:C2  Vdd Gnd C=0.1 uF 
-L:L1  N__7 Vdd L=22 nH Noise=yes  
-C:C1  RFin N__14 C=47 pF 
+"80-CBR06C820F5GAC":X2  Gnd Vdd 
 LNA_GRF2070:X1  EN Gnd N__0 N__14 N__7 
-C:C3  N__7 RFout C=4.7 pF 
+"994-0807SQ-11NGLC":X3  Vdd N__7 
+"581-06032U1R3BAT2A":X4  N__7 RFout 
+"581-600F100FT250XTV":X5  RFin N__14 
 end LNA_GRF2070_with_polar
 
 ; Library Name: project_system_lib
 ; Cell Name: SYMB_Filtre_AFS14A72
 ; View Name: schematic
-define SYMB_Filtre_AFS14A72 ( P1  P2 ) 
+define SYMB_Filtre_AFS14A72 ( P_OUT  P_IN  GND ) 
 ;parameters 
 #uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=2.436 GHz BWpass=0.08 GHz Apass=0.1 dB Ripple=0.1 dB BWstop=0.12 GHz Astop=40 dB StopType="open" N=0 IL=0 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
+BPF_Chebyshev:BPF2  P_IN P_OUT Fcenter=2.436 GHz BWpass=72 MHz Apass=1 dB Ripple=3 dB BWstop=96 MHz Astop=30 dB StopType="open" MaxRej=35 dB N=0 IL=3.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
 end SYMB_Filtre_AFS14A72
 
 ; Library Name: project_system_lib
 ; Cell Name: SYMB_Filtre_SF160868M4UU01
 ; View Name: schematic
-define SYMB_Filtre_SF160868M4UU01 ( P1  P2 ) 
+define SYMB_Filtre_SF160868M4UU01 ( GND  PIN  POUT ) 
 ;parameters 
 #uselib "ckt" , "BPF_Chebyshev"
-BPF_Chebyshev:BPF1  P1 P2 Fcenter=868 MHz BWpass=19 MHz Apass=3 dB Ripple=2 dB BWstop=24 MHz Astop=20 dB StopType="open" MaxRej=35 dB N=0 IL=4 dB Qu=1E308 Z1=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } Z2=50 Ohm tune{ 25 Ohm to 100 Ohm by 5 Ohm } 
+BPF_Chebyshev:BPF1  PIN POUT Fcenter=869 MHz BWpass=8 MHz Apass=1 dB Ripple=1 dB BWstop=20 MHz Astop=35 dB StopType="open" MaxRej=35 dB N=0 IL=4.5 dB Qu=1E308 Z1=50 Ohm Z2=50 Ohm 
 end SYMB_Filtre_SF160868M4UU01
 
 ; Library Name: project_system_lib
-; Cell Name: Frequency_Transposer_real
+; Cell Name: Frequency_Transposer_Up_Down_no_circulator
 ; View Name: schematic
-define Frequency_Transposer_real ( "3V"  "5V"  Gnd  RFin  RFout ) 
+define Frequency_Transposer_Up_Down_no_circulator ( "3V"  "5V"  Gnd  vrec  IFout  vrfin  vfiltered_rfout ) 
 ;parameters 
-"Circulateur#20IN":X1  RFin N__5 vfiltered_rfout 
-"Circulateur#20OUT_v2":X2  N__4 RFout vrec 
-Dual_Mixer_with_VCO:X3  Gnd vifin vifout vrfin vrfout Gnd "3V" 
-SYMB_Filtre_SF160868M4UU01:X4  vifout N__14 
-"BGA2800-115":X5  Gnd N__14 N__4 "3V" 
+Dual_Mixer_with_VCO_real:X9  Gnd vifin vifout vrfin vrfout "3V" "3V" 
+SYMB_Filtre_SF160868M4UU01:X10  Gnd vifin vrec_amp 
+SYMB_Filtre_SF160868M4UU01:X4  Gnd vifout N__15 
+"BGA2800-115":X5  Gnd N__15 IFout "3V" 
 LNA_GRF2070_with_polar:X6  "5V" Gnd vrec vrec_amp "5V" 
-SYMB_Filtre_SF160868M4UU01:X7  vrec_amp vifin 
-SYMB_Filtre_AFS14A72:X8  vrfout vfiltered_rfout 
-#uselib "ckt" , "IsolatorSML"
-IsolatorSML:ISO1  N__5 vrfin Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=20 dB CheckPassivity=1 
-end Frequency_Transposer_real
+SYMB_Filtre_AFS14A72:X8  Gnd vrfout vfiltered_rfout 
+end Frequency_Transposer_Up_Down_no_circulator
 
-Frequency_Transposer_real:X1  N__2 N__0 0 N__4 N__5 
-V_Source:SRC1  N__2 0 Type="V_DC" Vdc=3.0 V SaveCurrent=1 
-V_Source:SRC2  N__0 0 Type="V_DC" Vdc=5.0 V SaveCurrent=1 
+Frequency_Transposer_Up_Down_no_circulator:X1  N__11 N__10 0 "in_0\.869" "out_0\.869" "in_2\.4" out24 
+V_Source:SRC1  N__11 0 Type="V_DC" Vdc=3.0 V SaveCurrent=1 
+V_Source:SRC2  N__10 0 Type="V_DC" Vdc=5.0 V SaveCurrent=1 
 Port:PORT1  "in_2\.4" 0 Num=1 Z=50 Ohm P[1]=polar(dbmtow(2),0) Freq[1]=2.412 GHz    Noise=yes Pac=polar(dbmtow(0),0) 
 HB:HB1 MaxOrder=4 Freq[1]=0.543 GHz Freq[2]=1.000 GHz Freq[3]=2.412 GHz Order[1]=3 Order[2]=3 Order[3]=3 StatusLevel=2 HBSS_WSP=0 OutputPlan="HB1_Output" 
 
@@ -142,9 +293,5 @@ Component:tahb_HB1 Module="ATAHB" Type="ModelExtractor" \
  Tran_Analysis="HB1_tran" HB_Analysis="HB1" 
 
 Port:PORT2  "in_0\.869" 0 Num=2 Z=50 Ohm P[1]=polar(dbmtow(-120), 0) Freq[1]=869 MHz    Noise=yes Pac=polar(dbmtow(0),0) 
-#uselib "ckt" , "Circulator"
-Circulator:CIR1  N__4 "out_2\.4" "in_2\.4" Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=200 dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-#uselib "ckt" , "Circulator"
-Circulator:CIR2  N__5 "out_0\.869" "in_0\.869" Loss1=0. dB Loss2=0. dB Loss3=0. dB Loss4=0. dB VSWR1=1. VSWR2=1. VSWR3=1. VSWR4=1. Isolat=200. dB Z1=50 Ohm Z2=50 Ohm Z3=50 Ohm CheckPassivity=1 
-R:R1  "out_2\.4" 0 R=50 Ohm Noise=yes 
 R:R2  "out_0\.869" 0 R=50 Ohm Noise=yes 
+R:R1  out24 0 R=50 Ohm Noise=yes 

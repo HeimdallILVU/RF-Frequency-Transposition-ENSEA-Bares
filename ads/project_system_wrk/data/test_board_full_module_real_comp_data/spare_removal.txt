@@ -1,0 +1,16 @@
+(nil
+    spare_node_list(5)
+       (
+            "out24"
+            "X1.X6.N__0"
+            "X1.X9.N__39"
+            "X1.X9.N__44"
+            "X1.X9.X11.N__3"
+        )
+    spare_inst_list(3)
+       (
+            "R1"
+            "X1.X9.X2.R6"
+            "X1.X9.X3.R6"
+        )
+)

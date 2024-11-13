@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="121" Version="100">
+<ADSWorkspace Revision="125" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <ConfigFile Name="dds.cfg" />
@@ -104,6 +104,7 @@
                 <Cell Name="project_system_lib:Filter DOWN Transmission Line_v1" />
                 <Data_Display Name="Filter DOWN Transmission Line_v1.dds" />
             </Folder>
+            <Cell Name="project_system_lib:test_board_full_module_real_comp" />
         </Folder>
         <Folder Name="Full_Module">
             <Cell Name="project_system_lib:Frequency_Transposer" />
@@ -147,6 +148,7 @@
             <Cell Name="project_system_lib:972-LP736A00.000000I" />
             <Cell Name="project_system_lib:MAX2609 with resonating inductor" />
             <Cell Name="project_system_lib:Crystal LP736A00 with filter" />
+            <Cell Name="project_system_lib:Dual_Mixer_with_VCO_real" />
         </Folder>
         <Log Name="netlist.log" />
         <Dataset Name="Frequency_Transposer_Test_Board.ds" />
