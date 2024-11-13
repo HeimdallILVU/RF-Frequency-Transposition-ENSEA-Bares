@@ -10,7 +10,7 @@ ddoId = get_new(ddsId, "Object");
 // DataDisplay Object:
 	set(ddoId, "Path", dds_get_exec_path(what_file(0)));
 	set(ddoId, "Name", dds_get_exec_file(what_file(0)));
-	set(ddoId, "FileModifiedDateAndTime", "2024-11-13T14:50:21Z");
+	set(ddoId, "FileModifiedDateAndTime", "2024-11-13T14:09:10Z");
 	set(ddoId, "FileCreatedDateAndTime", "2024-10-02T13:26:30Z");
 	dssId = get(ddoId, "DatasetServer");
 // Default Dataset
@@ -242,8 +242,8 @@ markerID = get_new(traceID, "MarkerNew", "m1", "868000000.0000000000000000000000
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 5000);
-		set(markerID, "MkrReadoutRight", 6457);
-		set(markerID, "MkrReadoutBottom", 2275);
+		set(markerID, "MkrReadoutRight", 6453);
+		set(markerID, "MkrReadoutBottom", 2271);
 		set(markerID, "MkrReadoutTop", 1750);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -635,8 +635,8 @@ markerID = get_new(traceID, "MarkerNew", "m2", "865000000.0000000000000000000000
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 5000);
-		set(markerID, "MkrReadoutRight", 6401);
-		set(markerID, "MkrReadoutBottom", 5400);
+		set(markerID, "MkrReadoutRight", 6397);
+		set(markerID, "MkrReadoutBottom", 5396);
 		set(markerID, "MkrReadoutTop", 4875);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -1060,7 +1060,7 @@ traceID = get_new(goId0, "Trace", "dB(S(2,1))", "X Axis", "Y Axis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
-markerID = get_new(traceID, "MarkerNew", "m3", "868100000.00000000000000000000000000000000", 0, "", "", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m3", "865000000.00000000000000000000000000000000", 0, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 600019796);
@@ -1110,75 +1110,10 @@ markerID = get_new(traceID, "MarkerNew", "m3", "868100000.0000000000000000000000
 		set(markerID, "MkrReadoutFont", "Arial For CAE");
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
-		set(markerID, "MkrReadoutLeft", 9375);
-		set(markerID, "MkrReadoutRight", 10776);
-		set(markerID, "MkrReadoutBottom", 8525);
-		set(markerID, "MkrReadoutTop", 8000);
-		set(markerID, "MkrIndicatorColor", 0);
-		set(markerID, "MkrIndicatorSize", 6);
-		set(markerID, "MkrIndicatorType", 0);
-	}
-// Marker Types:
-	if (markerID != NULL) {
-		set(markerID, "MkrOffsetValue", -3);
-		set(markerID, "MkrAperturePercentX", 10);
-		set(markerID, "MkrAperturePercentY", 10);
-		set(markerID, "DrawApertureOnOff", FALSE);
-	}
-markerID = get_new(traceID, "MarkerNew", "m4", "860500000.00000000000000000000000000000000", 0, "DDSinternal2", "", 1, "m3");
-// Base Class Object:
-	set(markerID, "Name", "");
-	set(markerID, "Uid", 1810394943);
-// Graphical Object:
-	set(markerID, "Right", 0);
-	set(markerID, "Bottom", 0);
-	set(markerID, "Left", 0);
-	set(markerID, "Top", 0);
-	set(markerID, "Zrot", 0.0);
-	set(markerID, "Yrot", 0.0);
-	set(markerID, "Xrot", 0.0);
-	set(markerID, "Status", 553682944);
-	set(markerID, "LineColor", 0);
-	set(markerID, "LineType", 0);
-	set(markerID, "LineWidth", 0);
-// Marker:
-	if (markerID != NULL) {
-		set(markerID, "DataScript", "trcdata");
-		set(markerID, "DeltaModeStatus", 1);
-		set(markerID, "MkrType", 1);
-		set(markerID, "Format", 0);
-		set(markerID, "NumDigits", 3);
-		set(markerID, "ComplexNumberFormat", 1);
-		set(markerID, "AuxFormat", 0);
-		set(markerID, "AuxNumDigits", 3);
-		set(markerID, "AuxType", 0);
-		set(markerID, "AuxZ", "1");
-		set(markerID, "AuxComplexNumberFormat", 0);
-		set(markerID, "ReadoutChartVisualLabel", 1);
-		set(markerID, "ReadoutSweepVisualLabel", 1);
-		set(markerID, "ReadoutTypeVisualLabel", 1);
-		set(markerID, "ReadoutOutlineVisualLabel", 1);
-		set(markerID, "ReadoutIndeVisualLabel", 1);
-		set(markerID, "ReadoutDepeVisualLabel", 1);
-		set(markerID, "ReadoutNameVisualLabel", 1);
-		set(markerID, "ReadoutVisualLabel", 1);
-		set(markerID, "SymbolVisualLabel", 1);
-		set(markerID, "NameVisualLabel", 1);
-		set(markerID, "MkrDontMoveReadoutWithPlot", 1);
-		set(markerID, "MkrSweepExpressionsEnabled", 0);
-	}
-// More marker:
-	if (markerID != NULL) {
-		set(markerID, "MkrLabelFont", "Arial For CAE");
-		set(markerID, "MkrLabelFontSize", 167);
-		set(markerID, "MkrLabelColor", 0);
-		set(markerID, "MkrReadoutFont", "Arial For CAE");
-		set(markerID, "MkrReadoutFontSize", 167);
-		set(markerID, "MkrReadoutColor", 0);
-		set(markerID, "MkrReadoutLeft", 9375);
-		set(markerID, "MkrReadoutRight", 10832);
-		set(markerID, "MkrReadoutBottom", 9317);
-		set(markerID, "MkrReadoutTop", 8625);
+		set(markerID, "MkrReadoutLeft", 7790);
+		set(markerID, "MkrReadoutRight", 9187);
+		set(markerID, "MkrReadoutBottom", 8646);
+		set(markerID, "MkrReadoutTop", 8125);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
 		set(markerID, "MkrIndicatorType", 0);
@@ -1203,9 +1138,9 @@ markerID = get_new(traceID, "MarkerNew", "m4", "860500000.0000000000000000000000
 ddWinId = get_new(ddsId, "Window", 960, 28, 960, 977);
 	set(ddWinId, "Object", ddoId);
 	set(ddWinId, "CurrentPage", 1081542911);
-	set(ddWinId, "PageViewRect_1081542911", list(4925, 9912, 10741, 3960));
+	set(ddWinId, "PageViewRect_1081542911", list(1659, 12059, 12541, 6765));
 	set(ddWinId, "Frame", list(960, 28, 960, 977));
-	set(ddWinId, "Maximized", FALSE);
+	set(ddWinId, "Maximized", TRUE);
 	set(ddWinId, "ForegroundColor", 0);
 	set(ddWinId, "BackgroundColor", 8);
 	set(ddWinId, "WindowPageOrder", list("page 1"));
