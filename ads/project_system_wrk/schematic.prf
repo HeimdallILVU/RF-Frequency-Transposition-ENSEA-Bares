@@ -2,7 +2,7 @@ pathBend 1
 pathMiterPercent 0.000000
 pathEndCap 2
 pathLayerName default
-textFontName Roboto
+textFontName Arial For CAE
 textPoint 5
 textJustification 34
 textAngle 0.000000
@@ -10,12 +10,12 @@ textAbsolute 0
 instNameLayer 6
 instIDLayer 7
 instParam1Layer 8
-instTextFontName Roboto
+instTextFontName Arial For CAE
 instTextPoint 12
 instTextRows 15
 instTextAddOptionalParams 0
 instTextPrec 2
-wireLabelFontName Roboto
+wireLabelFontName Arial For CAE
 wireLabelPoint 12
 wireLabelColor 37
 fixedInstHighlightColor 2
@@ -39,8 +39,7 @@ portColor 5
 backgroundColor 42
 foregroundColor 10
 globalArcResolution 5.000000
-pcbViaArcResolution 5.000000
-selectFilter 1519
+selectFilter 1535
 selectMode 1
 shapeSelectMode 2
 selectBoxSize 10.000000

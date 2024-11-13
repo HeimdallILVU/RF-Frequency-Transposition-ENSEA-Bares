@@ -93,6 +93,10 @@
             <Cell Name="project_system_lib:test_board_full_module_real" />
             <Cell Name="project_system_lib:test_board_AFS14A72" />
             <Data_Display Name="test_board_full_module_real.dds" />
+            <Cell Name="project_system_lib:test_LNA_noise_opt" />
+            <Data_Display Name="test_LNA_noise_opt.dds" />
+            <Cell Name="project_system_lib:TEST_BGA2800-115_S_param" />
+            <Data_Display Name="TEST_BGA2800-115_S_param.dds" />
             <Data_Display Name="test_board_AFS14A72.dds" />
         </Folder>
         <Folder Name="Full_Module">
@@ -217,5 +221,14 @@
         <Data_Files Name="test_s_param_ampli_LNA_data\logFile.txt" />
         <Data_Files Name="Work_low_cost_VCO_data\logFile.txt" />
         <Library Name="ads_quantum" />
+        <Data_Files Name="test_board_full_module_real_data\spare_removal.txt" />
+        <Data_Files Name="dc_annotation\project_system_lib_test_board_full_module_real_schematic\annotation_2.xml" />
+        <Dataset Name="test_LNA_noise_opt.ds" />
+        <Data_Files Name="test_LNA_noise_opt.ds" />
+        <Data_Files Name="test_LNA_noise_opt_data\logFile.txt" />
+        <Data_Files Name="test_LNA_noise_opt_data\spare_removal.txt" />
+        <Dataset Name="TEST_BGA2800_115_S_param.ds" />
+        <Data_Files Name="TEST_BGA2800_115_S_param.ds" />
+        <Data_Files Name="TEST_BGA2800_115_S_param_data\logFile.txt" />
     </Workspace>
 </ADSWorkspace>
