@@ -25,7 +25,7 @@ C:C3  N__7 RFout C=4.7 pF
 end LNA_GRF2070_with_polar
 
 V_Source:SRC1  N__4 0 Type="V_DC" Vdc=5 V SaveCurrent=1 
-Port:TermG1  N__6 0 Num=1 Z=53 Ohm tune{ 2 Ohm to 75 Ohm by 0.5 Ohm } Noise=yes Temp=25 
+Port:TermG1  N__6 0 Num=1 Z=50 Ohm Noise=yes Temp=25 
 Port:TermG2  N__0 0 Num=2 Z=50 Ohm Noise=yes Temp=25 
 LNA_GRF2070_with_polar:X1  N__4 0 N__6 N__0 N__4 
 S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 NoiseInputPort=1 NoiseOutputPort=2 SPSS_WSP=yes \

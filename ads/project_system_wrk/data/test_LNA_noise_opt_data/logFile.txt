@@ -3,10 +3,10 @@ hpeesofsim (*) 595.shp Oct 31 2023, MINT version 5
     (64-bit windows built: Tue Oct 31, 2023 22:23:19 +0000)
 
 
-***** Simulation started at Wed Nov  6 17:24:23 2024
+***** Simulation started at Wed Nov 13 17:11:21 2024
       Running on host: "LAPTOP-PSM28IJ9"
       In Directory: "C:\Users\benji\Documents\GitHub\system_project_ENSEA\ads\project_system_wrk\data"
-      Process ID: 9416
+      Process ID: 13820
 
 Warning detected by hpeesofsim during netlist flattening.
     Touchstone file parser warning:
@@ -31,5 +31,5 @@ Warning detected by hpeesofsim during SP analysis `SP1'.
 
 
 Resource usage:
-  Total stopwatch time     =     0.92 seconds.
+  Total stopwatch time     =     0.94 seconds.
 
